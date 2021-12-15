@@ -15,14 +15,14 @@ body{
     
     
 }
-input:focus{
+.inpuTxt:focus{
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
     
             }
             
-input{
+.inpuTxt{
     
     box-shadow: 0 0 0 0;
     border: 0 none;

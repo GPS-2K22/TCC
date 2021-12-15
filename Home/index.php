@@ -10,24 +10,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
-	function submeterForm(acao){ //submete o formulario mas passando...
-		document.getElementById('acao').value = acao; //o valor do campo de texto escondido para o valor do botao clicado para selecionar a acao e...
-		document.getElementById('f').submit(); //efetua a submissao do formulario
+	function submitForm(paramAct){ //submete o formulario mas passando...
+		document.getElementById('Act').value = paramAct; //o valor do campo de texto escondido para o valor do botao clicado para selecionar a acao e...
+		document.getElementById('form').submit(); //efetua a submissao do formulario
 	}
 	</script>
 	<?php session_start(); //inicia a sessao ?>
 </head>
 <body>
 
-	<form name="f" id="f" method="post" action="crud.php">
-		<input type="text" name="nome" value="" placeholder="nome"></input><br>
-		<input type="text" name="imagem" value="" placeholder="imagem"></input><br>
-		<input type="text" name="idade" value="" placeholder="idade"></input><br>
-		<input type="text" name="acao" id="acao" style="display:none"></input><br>
-		<input type="button" value="C - Create (Criar)" onclick="submeterForm('c');"></input>
-		<input type="button" value="R - Restore (Consultar)" onclick="submeterForm('r');"></input>
-		<input type="button" value="U - Update (Atualizar)" onclick="submeterForm('u');"></input>
-		<input type="button" value="D - Delete (Deletar)" onclick="submeterForm('d');"></input>
+	<form name="f" id="form" method="post" action="crud.php">
+		<input type="text" name="nome" value="" placeholder="nome" class="inpuTxt"></input><br>
+		<input type="text" name="imagem" value="" placeholder="imagem" class="inpuTxt" ></input><br>
+		<input type="text" name="idade" value="" placeholder="idade" class="inpuTxt"></input><br>
+		<input type="text" name="Act" id="Act" style="display:none"></input><br>
+
+
+		
+		<input type="button" value="C - Create (Criar)" onclick="submitForm('c');"></input>
+		<input type="button" value="R - Restore (Consultar)" onclick="submitForm('r');"></input>
+		<input type="button" value="U - Update (Atualizar)" onclick="submitForm('u');"></input>
+		<input type="button" value="D - Delete (Deletar)" onclick="submitForm('d');"></input>
 	</form>
 	<br><br>
 	<?php
