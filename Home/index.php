@@ -20,17 +20,17 @@
 <body>
 
 	<form name="f" id="form" method="post" action="crud.php">
-		<input type="text" name="nome" value="" placeholder="nome" class="inpuTxt"></input><br>
-		<input type="text" name="imagem" value="" placeholder="imagem" class="inpuTxt" ></input><br>
-		<input type="text" name="idade" value="" placeholder="idade" class="inpuTxt"></input><br>
+		<input type="text" name="nome" value="" placeholder="Nome" class="inpuTxt"></input><br>
+		<input type="text" name="imagem" value="" placeholder="Imagem" class="inpuTxt" ></input><br>
+		<input type="text" name="idade" value="" placeholder="Idade" class="inpuTxt"></input><br>
 		<input type="text" name="Act" id="Act" style="display:none"></input><br>
 
 
-		
-		<input type="button" value="C - Create (Criar)" onclick="submitForm('c');"></input>
-		<input type="button" value="R - Restore (Consultar)" onclick="submitForm('r');"></input>
-		<input type="button" value="U - Update (Atualizar)" onclick="submitForm('u');"></input>
-		<input type="button" value="D - Delete (Deletar)" onclick="submitForm('d');"></input>
+
+		<input type="button" value="Create" onclick="submitForm('c');" class="buttonAss" id="btnC" ></input>
+		<input type="button" value="Restore" onclick="submitForm('r');"  class="buttonAss" id="btnR"></input>
+		<input type="button" value="Update" onclick="submitForm('u');"  class="buttonAss" id="btnU"></input>
+		<input type="button" value="Delete" onclick="submitForm('d');"   class="buttonAss"id="btnD"></input>
 	</form>
 	<br><br>
 	<?php
@@ -41,6 +41,7 @@
 	?>
 	<hr /><br>
    <?php
+  
 		$con = new mysqli("127.0.0.1:3306", "root", "", "banco"); //executa a conexao com o banco
 		$sql = "select * from produtos"; // seleciona todos os dados ta tabela produtos
 		$res = $con->query($sql); //executa a consulta SQL
