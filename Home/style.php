@@ -9,6 +9,12 @@
 
 
 }
+h1{
+    margin-top:15%;
+    margin-left: 40%;
+
+
+}
 table{
   
     width:50%;
@@ -29,6 +35,12 @@ body{
     
     
 }
+
+
+/****************************** */
+
+
+
 .inpuTxt:focus{
     box-shadow: 0 0 0 0;
     border: 0 none;
@@ -61,6 +73,55 @@ body{
  
 
 }
+
+/*********************************************************** */
+
+
+
+
+
+.inpuTxtLog:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    
+            }
+            
+.inpuTxtLog{
+    margin-left: 40%;
+   
+    margin-bottom: 1.5%;
+    border-radius: 5px;
+    color: #cbcdc9;
+    background-color: #40444b;
+    
+
+
+    width: 20%;
+    height: 4%;
+    user-select: none;
+
+    font-size: 15px;
+    border: none;
+
+    
+    
+}		
+.inpuTxtLog::placeholder{
+    color: #6d7078;
+ 
+
+}
+
+
+
+
+
+
+
+
+/************************************************************* */
+
 .buttonAss{
   position: fixed;
   diplay: inline;
@@ -158,4 +219,22 @@ body{
 }
 /*************************************/
 
+
+/******************************* */
+#btnL{
+    top:50%;
+    margin-left: 28%;
+    color: #3acf78;
+    border-color:#2c9c5b;
+
+}
+#btnL:hover{
+    border-color: #3acf78;
+    color: #2c9c5b;
+    background-color: #3acf78;
+ 
+    
+}
+
+/**********************************/
 </style>
