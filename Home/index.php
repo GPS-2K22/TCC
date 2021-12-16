@@ -46,6 +46,7 @@
 		$sql = "select * from produtos"; // seleciona todos os dados ta tabela produtos
 		$res = $con->query($sql); //executa a consulta SQL
 		if(mysqli_num_rows($res) > 0){ //checa se foram encontrados resultados
+			echo("<div id='tbEx'>");
 			echo("<table>"); //daqui pra baixo estamos montando a tabela
 			echo("<tr><th>idprod</th><th>nome</th><th>idade</th><th>imagem</th></tr>"); //cabecalho da tabela
 			while($campo = $res->fetch_assoc()){ //para cada linha de resultado recuperada da consulta monta uma linha em <table>
@@ -57,6 +58,7 @@
 				echo("</tr>");
 			}
 			echo("</table>"); //finaliza a tabela
+			echo("</div>");
 		}
 		else{ //nenhum dado na tabela
 			echo "nenhum dado inserido por enquanto";

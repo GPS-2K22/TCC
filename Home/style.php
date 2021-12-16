@@ -1,12 +1,25 @@
+
 <style>
+/*Estilos Para Usar no  Programa Todo*/
+#tbEx{
+    position:fixed;
+    left:25%;
+    width: 100%;
+   
+
+
+}
 table{
+  
     width:50%;
     border:1px solid #ffffff;
     text-align:center
-    margin
+    
 }
 th, td{
     border: 0.01px  solid #ffffff;
+    
+    user-select: none;
 }
 body{
     background-color:#010101;
@@ -80,6 +93,8 @@ body{
   height: 8%;
 
 }
+
+/******************************* */
 #btnC{
     margin-left: 28%;
     color: #3acf78;
@@ -93,11 +108,25 @@ body{
  
     
 }
+
+/**********************************/
 #btnR{
     margin-left: 40.5%;
+    border-color: #959c2c;
+    color: #e8f800;
 
     
 }
+
+#btnR:hover{
+    border-color: #e8f800;
+    color: #959c2c;
+    background-color: #e8f800;
+ 
+    
+}
+
+/*****************************/
 #btnU{
     border-color: #6161d1;
     color: #85bafc;
@@ -111,10 +140,22 @@ body{
  
     
 }
-#btnD{
 
+/****************************************/
+#btnD{
+    border-color: #af2525;
+    color: #ec1414;
     margin-left: 64.5%;
     
 }
+
+#btnD:hover{
+    border-color: #ec1414;
+    color: #af2525;;
+    background-color: #ec1414;
+ 
+    
+}
+/*************************************/
 
 </style>
