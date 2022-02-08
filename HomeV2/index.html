@@ -1,0 +1,114 @@
+<!DOCTYPE>
+
+<html>
+<head>
+<title>Wellcome</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+	
+<body>
+
+<div class="container" id="page-start">
+  
+  
+   <header>
+    <div class="container-nav" >
+           <img src="" id="" alt=""> 
+      <div class="drawNav" tabindex="0">
+         
+				                 <span class="icon-bar"></span>
+				                 <span class="icon-bar"></span>
+				                 <span class="icon-bar"></span>
+		        
+      </div>
+                   
+                   
+               
+         
+
+ </header>
+  
+  
+  
+  
+  
+  
+        
+        <div class="content first-content">
+            <div class="first-column">
+              <!-- <img src="imgs/logoCode.jpg" class="logo" alt="">-->
+                <h2 class="title title-primary">Bem-vindo ao CodeAny,</h2>
+                <p class="description description-primary">Nosso objetivo é ajuda-lo a aprender novas linguagens de programação com
+                  nosso banco de dados com diversos códigos, então para começar que tal criar uma conta?</p>
+                
+                <button id="signin" class="btn btn-primary" onclick="window.location.href='#loginCol';" >Vamos nessa!</button>
+            </div>    
+          <!-- first content -->
+        <div class="second-content">
+            <div class="first-column">
+                <h2 class="title title-second">Ei, aqui!</h2>
+                <p class="description description-second">Caso você tenha uma conta e quer acessa-la, </p>
+                <p class="description description-second">clique no botão abaixo para continuar!</p>
+                <button id="signup" class="btn btn-second">Entrar</button>
+            </div>
+          
+          
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          
+          <br>
+          
+          <br><br><br><br>
+          <br><br><br><br>
+          <br><br><br><br>
+          <br><br><br><br>
+          
+            <div class="second-column" id="loginCol" >
+                <h2 class="title title-second">entre em sua conta</h2>
+               
+                <p class="description description-second">use seu email e senha de cadastro nos espaços abaixo:</p>
+                <form class="form" name="f" id="forml" method="post" action="crudFromLogIn.php">
+                
+                    <label class="label-input" >
+                        <i class="far fa-envelope icon-modify "></i>
+                        <input type="email"  name="emailLog" value="" placeholder="Email ">
+                    </label>
+                
+                    <label class="label-input " for="">
+                        <i class="fas fa-lock icon-modify "></i>
+                        <input type="password " placeholder="Senha"  name="passwordLog" value="" >
+                    </label>
+					
+					
+					<input type="text " name="Act " id="ActL " style="display:none"></input><br>
+                    <a class="password" href="#page-start">Esqueceu a senha?</a>
+
+
+                    <button  class="btn btn-second "   onclick="submitFormLog('l');">Logar!</button>
+
+					
+                </form>
+            </div>
+        </div>
+  
+      
+      
+      
+      <script>
+      function lol() {
+  document.documentElement.style.scrollBehavior = "smooth";
+}
+      
+      </script>
+    </body>
+    </html> 

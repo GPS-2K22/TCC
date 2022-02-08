@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
+html{
+  
+  
+ ​  ​scroll-behavior​:​ smooth;
+}
+* {
+    scroll-behavior​:​ smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+.container{
+    
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px 0px;
+    background-attachment: fixed;
+    background-image: url("https://www.10wallpaper.com/wallpaper/3840x2400/1712/Italy_winter_sunshine_jungle_sunset_4K_Ultra_HD_3840x2400.jpg");
+    transition: 0.1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+     
+}
+.content {
+    
+    
+    width: 100%;
+    height: 50%;
+    justify-content: space-between;
+    background: linear-gradient(to top, rgba(0,0,0,1) 60%, rgba(0,0,0,0));
+    position: relative;
+}
+.content::before {
+    
+    
+    
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+
+    
+}
+.title {
+  
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.title-primary {
+    margin-top: 25%;
+    color: #fff;
+    
+}
+.title-second {
+    
+    color: #fff;
+}
+.description {
+    
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 30px;
+}
+.description-primary {
+    color: #fff;
+    
+}
+.description-second {
+    color: #fff;
+}
+
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    margin-top: 1rem;
+    user-select: none;
+}
+.btn-primary {
+    background-color: transparent;
+    margin-top: 10%;
+    color: #fff;
+    margin-bottom: 40%;
+    border: 1px solid ;
+    transition: background-color .5s;
+}
+.btn-second{
+     background-color: transparent;
+     border: 1px solid ;
+     color: #fff;
+     margin-bottom: 20%;
+  
+  
+  
+}
+
+
+
+.first-column {
+    text-align: center;
+    
+    height: 562px;
+    z-index: 10;
+}
+.second-column {
+  
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+.form input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    user-select:none;
+    background-color: #ecf0f1;
+}
+.form input:focus{
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+input:-webkit-autofill 
+{    
+    -webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
+    -webkit-text-fill-color: #000 !important;
+}
+.label-input {
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+.icon-modify {
+    color: #7f8c8d;
+    padding: 0 5px;
+}
+
+
+.container-nav{
+
+  
+
+  display: flex;
+
+  flex-direction: row;
+
+  background: transparent;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+
+.icon-bar {
+  display: block;
+  margin-top: 10%;
+  width: 100%;
+  border-radius: 15px;
+  height: 3px;
+  background: #fff;
+  transition: .3s;
+}
+
+.drawNav {
+  background: transparent;
+  position: relative;
+  top:0%;
+  right: 0%;
+  margin-bottom: 10%;
+  margin-right: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  height:50%;
+  width: 5%;
+  cursor: pointer;
+  touch-action: manipulation;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-appearance: none;
+  z-index: 99;
+}
+
+.logo{
+  width: 70%;
+  height: 40%;
+}
+@media screen and (max-width: 740px) {
+    .container {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ48pUKx08scLyea5Qvcge2HaGJw9IUXUR_g&usqp=CAU");
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .container {
+        
+        
+    }
+}
