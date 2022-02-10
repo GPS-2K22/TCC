@@ -1,0 +1,7 @@
+Título: Aplicação Web voltada ao auxílio em aprendizagem de uma liguagem de programação.
+	
+Problema: Dificuldade no aprendizado de uma nova linguagem pela diferença de algorítmos entre elas.
+
+Solução: Desenvolver uma aplicação Web voltada a traduzir o códigos de uma linguagem para outra, dando uma visão mais ampla ao usuário acerca da linguagem que o usuário pretende aprender.
+
+Tecnologias: Jquery Boostrap e JS; Html5, Css3, PHP, Js, NodeJs ; MySql - PHPmyadmin; Web.
