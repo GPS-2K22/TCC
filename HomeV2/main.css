@@ -13,11 +13,12 @@ body {
 }
 
 nav {
-
-
+  
     width: 100%;
 
     display: flex;
+
+    user-select: none;
 
 
     color: #fff;
@@ -27,7 +28,8 @@ nav {
     /*background-color: rgba(0,0,0,0.2);*/
     
     /*background-color: rgba(78, 78, 78,0.4);*/
-    background:linear-gradient(to bottom, rgba(0, 0, 0, 0.5)90%, rgba(255,255,255,0.1));
+
+   /* background:linear-gradient(to bottom, rgba(0, 0, 0, 0.5)90%, rgba(255,255,255,0.1));*/
 
     justify-content: space-between;
     
@@ -46,7 +48,7 @@ nav a:nth-child(1) {
     font-weight: bold;
 
 }
-nav a:nth-child(2) {
+nav a:nth-child(3) {
 
    
     font-size: 80%;
@@ -67,6 +69,12 @@ nav li {
     margin-right: 10px;
    
 }
+nav img{
+    top: -20%;
+    width: 15%;
+    margin-left: 2%;
+    position: relative;
+}
 .container{
     
     width: 100%;
@@ -74,7 +82,7 @@ nav li {
     background-size: 100% 100%;
     background-position: 0px 0px;
     background-attachment: fixed;
-    background-image: url("https://www.10wallpaper.com/wallpaper/3840x2400/1712/Italy_winter_sunshine_jungle_sunset_4K_Ultra_HD_3840x2400.jpg");
+    background-image: url("https://img.r7.com/images/astro-23082018125241285");
     transition: 0.1s;
     display: flex;
     flex-direction: column;
@@ -134,10 +142,10 @@ nav li {
 
 
 .btn {
-    border-radius: 15px;
+    border-radius: 9px;
     text-transform: uppercase;
     font-size: 10px;
-    padding: 10px 50px;
+    padding: 10px 5px;
     cursor: pointer;
     font-weight: bold;
     border: none;
@@ -150,6 +158,7 @@ nav li {
     color: #fff;
     margin-bottom: 40%;
     border: 1px solid ;
+    /*width: 20%;*/
     transition: background-color .5s;
 }
 .btn-primary:hover{
@@ -227,8 +236,8 @@ input:-webkit-autofill
 .container-nav{
 
   
-
-  display: flex;
+   
+  display: none;
 
   flex-direction: row;
 
@@ -242,6 +251,7 @@ input:-webkit-autofill
 
 
 .icon-bar {
+    
   display: block;
   margin-top: 10%;
   width: 100%;
@@ -253,7 +263,7 @@ input:-webkit-autofill
 
 .drawNav {
   background: transparent;
-  position: relative;
+  position: absolute;
   top:0%;
   right: 0%;
   margin-bottom: 10%;
@@ -264,24 +274,35 @@ input:-webkit-autofill
   border: 0;
   background: transparent;
   border-radius: 0;
-  height:50%;
+  height:5%;
   width: 5%;
   cursor: pointer;
   touch-action: manipulation;
   pointer-events: auto;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-appearance: none;
-  z-index: 99;
+
 }
 
 .logo{
   width: 70%;
   height: 40%;
 }
+header{
+    width: 100%;
+}
 @media screen and (max-width: 740px) {
     .container {
         background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ48pUKx08scLyea5Qvcge2HaGJw9IUXUR_g&usqp=CAU");
         width: 100%;
+    }
+    nav{
+        display: none;
+
+    }
+    .container-nav{
+
+        display: flex;
     }
 }
 
