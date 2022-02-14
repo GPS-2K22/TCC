@@ -13,6 +13,8 @@ body {
 
 }
 
+
+
 nav {
   
     width: 100%;
@@ -21,16 +23,7 @@ nav {
 
     user-select: none;
 
-
     color: #fff;
-
-    /*background:linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.1) 100%); /*----> Primeira Opção*/
-
-    /*background-color: rgba(0,0,0,0.2);*/
-    
-    /*background-color: rgba(78, 78, 78,0.4);*/
-
-   /* background:linear-gradient(to bottom, rgba(0, 0, 0, 0.5)90%, rgba(255,255,255,0.1));*/
 
     justify-content: space-between;
     
@@ -50,11 +43,7 @@ nav a:nth-child(1) {
 
 }
 nav a:nth-child(3) {
-
-   
     font-size: 80%;
-    
-
 }
 
 nav li {
@@ -76,6 +65,8 @@ nav img{
     margin-left: 2%;
     position: relative;
 }
+
+/* Home Page Inicio #01*/
 .container{
     
     width: 100%;
@@ -311,3 +302,30 @@ header{
 @media screen and (max-width: 1020px) {
    
 }
+
+/*Home page final #02*/
+
+/*Main page  inicio #03*/
+.containerMainPage{
+    text-align: center;
+    background-color: #1e1c21;
+    color:  #abb2bf;
+}
+
+.containerMainPage input{
+    margin-top: 5%;
+    border: none;
+    outline: 0;
+    width: clamp(150px,50%,450px);
+    height: 100px;
+    font-size: 200%;
+    color: #d19a5a;
+    background-color: #120e16;
+    padding: 2% 2% 2% 5%;
+}
+.containerMainPage input::placeholder{
+    color: #3ab6b7 ;
+
+}
+
+/*Main page  final #04*/
