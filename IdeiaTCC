@@ -1,4 +1,4 @@
-Título: Aplicação Web voltada ao auxílio em aprendizagem de uma liguagem de programação.
+Título: Aplicação Web voltada ao auxílio em aprendizagem várias liguagem de programação.
 
 Equipe: Guilherme Enache Caetano, Pedro Calderaro Martins, Sandro Roberto Pimentel Junior.
 	
@@ -6,4 +6,4 @@ Problema: Dificuldade no aprendizado de uma nova linguagem pela diferença de al
 
 Solução: Desenvolver uma aplicação Web voltada a traduzir os códigos de uma linguagem para outra, dando uma visão mais ampla ao usuário acerca da linguagem que o usuário pretende aprender.
 
-Tecnologias: Framework: Jquery Boostrap e JS; Linguagem: Html5, Css3, PHP, Js, NodeJs ; Banco de Dados: MySql - PHPmyadmin; Plataforma: Web.
+Tecnologias: Framework: Jquery, Boostrap e JS; Linguagem: Html5, Css3, PHP, Js, NodeJs ; Banco de Dados: MySql - PHPmyadmin; Plataforma: Web.
