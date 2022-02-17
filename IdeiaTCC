@@ -7,3 +7,12 @@ Problema: Dificuldade no aprendizado de uma nova linguagem pela diferença de al
 Solução: Desenvolver uma aplicação Web voltada a traduzir os códigos de uma linguagem para outra, dando uma visão mais ampla ao usuário acerca da linguagem que o usuário pretende aprender.
 
 Tecnologias: Framework: Jquery, Boostrap e JS; Linguagem: Html5, Css3, PHP, Js, NodeJs ; Banco de Dados: MySql - PHPmyadmin; Plataforma: Web.
+
+Aplicação Web voltada ao auxílio em aprendizagem várias linguagens de programação.
+
+Equipe: 
+Guilherme Enache Caetano, 
+Pedro Calderaro Martins, 
+Sandro Roberto Pimentel Junior.
+	
+O problema analisado foi a dificuldade no aprendizado de uma nova linguagem por conta da diferença de algoritmos entre elas, a solução encontrada foi desenvolver uma aplicação web voltada a traduzir códigos de uma linguagem para outra, trazendo uma visão mais ampla ao usuário acerca da linguagem que o mesmo pretende aprender, serão utilizadas as linguagens de html5, css3, PHP, Js e NodeJs, como framework serão utilizados o Jquery, Boostrap e o Js, além disso como banco de dados será utilizado o MySql, PHPmyadmin.
