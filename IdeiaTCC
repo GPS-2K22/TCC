@@ -16,3 +16,39 @@ Pedro Calderaro Martins,
 Sandro Roberto Pimentel Junior.
 	
 O problema analisado foi a dificuldade no aprendizado de uma nova linguagem por conta da diferença de algoritmos entre elas, a solução encontrada foi desenvolver uma aplicação web voltada a traduzir códigos de uma linguagem para outra, trazendo uma visão mais ampla ao usuário acerca da linguagem que o mesmo pretende aprender, serão utilizadas as linguagens de html5, css3, PHP, Js e NodeJs, como framework serão utilizados o Jquery, Boostrap e o Js, além disso como banco de dados será utilizado o MySql, PHPmyadmin.
+
+---------
+
+Requisitos do usuário:
+	- Funcionalidades que o sistema deverá executar
+		- Uso de entrevista
+		- Estudo de caso
+		- Diferencial
+	- R.U.s são decritos no infitivos(desenvolver, projetar, etc.) - Resumo dos RUs -> objetivos específicos
+
+Exemplos de requisitos:
+	- Gerenciar aulnos
+		- Senha composta pelos 4 dígitos (primeiros) do CPF, mais 4 dígitos aleatórios
+		- Nome do usuário composto por abreviação do primeiro nome, mais o sobrenome
+	- Agendar aulas:
+		- Reposição somente na sexta
+		- Criar um calendário para o aluno visualizar as aulas
+		- Cores distintas para simbolizar aula normal e reposição
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+O que eu deveria aprender para conseguir converter o trecho de código abaixo que está em javascript para python?
+
+https://kalkicode.com/ai/online-java-to-javascript-converter#code-out
+
+- Converter o algorítmo
+	- Input que relaciona um algorítmo de uma linguagem para outras
+	- Apresentar o resultado com explicações breves acerca das mudanças
+- Uso da linguagem de entrada
+	- Verificação de cada caracter do algorítmo e correlaciona à funções de identificação de código
+- Uso da linguagem de saída
+ 	- Através da utilização das funções identificadoras de algorítmo, reescrever o código
+- Comentários de tradução
+	- Uma breve explicação e indicações acerca das mudanças entre os algorítmos
+- Linguagens
+	- Utilização de algorítmos das linguagens: Javascript, Python, (C#), PHP, Typescript
