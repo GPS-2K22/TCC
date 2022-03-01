@@ -315,7 +315,7 @@ header{
     height: 100%;
     padding: 5em;
 }
-.containerMainPage div{
+.containerMainPage div:nth-child(1){
     margin: 100px;
     justify-content: center;
     display: grid;
@@ -332,12 +332,17 @@ header{
     padding: 1em 1em 1em 2.5em;
     background-color: #120e16;
 }
-#explanation{
+.explanation{
     margin-top: 10px;
     display: none;
+    text-align: justify;
 }
 
-
+.box-translate{
+    margin: 100px;
+    justify-content: center;
+    display: grid;
+}
 
 .box-translate button:nth-child(2){
     margin: 50px;
@@ -367,4 +372,5 @@ header{
 .box-translate input::placeholder{
     color: #3ab6b7 ;
 }
+/*A fazer - Mudar o Tema*/
 /*Main page  final #04*/
