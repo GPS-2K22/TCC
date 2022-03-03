@@ -45,7 +45,7 @@ function translateCommand(){
                 if(i == 3){
                     //order.textContent = whatIs('command');
                     order.style.color = "#61afef";
-                    order.style.fontSize = "10%";
+                    order.style.fontSize = "40%";
                     order.style.marginTop = "10px";
                 }
             }
