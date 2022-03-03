@@ -344,12 +344,13 @@ header{
     display: grid;
 }
 
-.box-translate button:nth-child(2){
+.box-translate button:nth-child(4){
     margin: 50px;
+    margin-left: 35%;
     border: 1px  solid #fff;
     color: #fff;
     width: clamp(30vmin, 30vw, 30vmin);
-    font-size: clamp(1em,1em,1em);
+    font-size: clamp(10%,80%,1em);
 }
 #errorMessage{
     display: none;   
@@ -357,20 +358,78 @@ header{
     margin: 1px;
     margin-bottom: 5px;
 }
-.box-translate button:nth-child(2):hover{
+.box-translate button:nth-child(4):hover{
     color:#000;
     border: 1px solid #000;
     background-color: #fff;
 }
-.box-translate button:nth-child(2):focus{
-    box-shadow:0 0 0 .25rem rgba(255,255,255,.5)
+.box-translate button:nth-child(4):focus{
+    box-shadow:0 0 0 .25rem rgba(255,255,255,.5);
 }
 .no-focus:focus{
     box-shadow: none;
     outline: 0;
 }
+
+
 .box-translate input::placeholder{
     color: #3ab6b7 ;
 }
+
+
+
+
+.choseLang{
+    margin: 10px 10px 10px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.choseLang label img{
+    user-select: none;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 100px;
+    transition: 0.1s;
+    border: none;
+}
+.choseLang label input{
+    all: unset;
+}
+
+.choseLang label:nth-child(1) img:hover{
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 0 0 .5rem rgba(255,255,255,.1);
+}
+.choseLang #pyselect:checked + img{
+    background-color: rgba(255,255,255,.2);
+    box-shadow: 0 0 0 .5rem rgba(255,255,255,.2);
+}
+
+
+.choseLang label:nth-child(2) img:hover{
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 0 0 .5rem rgba(255,255,255,.1);
+}
+.choseLang #JSselect:checked + img{
+    background-color: rgba(255,255,255,.2);
+    box-shadow: 0 0 0 .5rem rgba(255,255,255,.2);
+}
+
+
+.choseLang label:nth-child(3) img:hover{
+    background-color: rgba(255,255,255,.1);
+    box-shadow: 0 0 0 .5rem rgba(255,255,255,.1);
+}
+.choseLang #PHPselect:checked + img{
+    background-color: rgba(255,255,255,.2);
+    box-shadow: 0 0 0 .5rem rgba(255,255,255,.2);
+}
+
+
+
+
+
 /*A fazer - Mudar o Tema*/
 /*Main page  final #04*/
