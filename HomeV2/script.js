@@ -2,6 +2,18 @@ var pi = ["PRINT"];
 var js = ["CONSOLE.LOG"];
 var php = ["ECHO"]
 
+var AutoCompleteValue =[
+    'Escrever',
+    'Escrever("mensagem")',
+    'Escrever("mensagem", variavel)'
+];
+
+$(function(){
+    $('#command').autocomplete({
+        source: AutoCompleteValue
+    });
+});
+
 
 
 function whatIs(what){
@@ -142,8 +154,7 @@ function closeError(){
 }
 
 
-//Feito - explanation, mais comandos e organização
-// A fazer - relação entre comandos(talvez banco de dados), escolher linguagem
+//Fazer --  Continuar o processo de criação do site através do backend(blocos de programação), e estilizar de certo modo
 
 
 // Hover 

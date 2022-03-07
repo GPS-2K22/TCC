@@ -307,7 +307,7 @@ header{
 
 /*Main page  inicio #03*/
 #body2{
-    background-color: #1e1c21;
+    background-color: #000;
 }
 .containerMainPage{
     text-align: center;
@@ -322,15 +322,16 @@ header{
 }
 
 .command{
-    border: none;
+    border: 1px transparent;
+    border-radius: 10px;
     outline: 0;
-    height: clamp(5vmin,100vh,25vmin);
-    width: clamp(100vmin,1150vw,60vmin);
+    height: clamp(5vmin,10vh,25vmin);
+    width: clamp(45vmin,100%,25vmax);
     font-family: Inconsolata, monospace;
-    font-size: clamp(1.5em,1.5em,1.5em);
+    font-size: clamp(3vmin,100%,1vmax);
     color: #d19a5a;
-    padding: 1em 1em 1em 2.5em;
-    background-color: #120e16;
+    padding: 1em;
+    background-color: /*#120e16*/ #323232;
 }
 .explanation{
     margin-top: 10px;
@@ -340,7 +341,7 @@ header{
 
 .box-translate{
     margin: 100px;
-    justify-content: center;
+    justify-content: left;
     display: grid;
 }
 
@@ -370,6 +371,7 @@ header{
     box-shadow: none;
     outline: 0;
 }
+
 
 
 .box-translate input::placeholder{
@@ -427,9 +429,18 @@ header{
     box-shadow: 0 0 0 .5rem rgba(255,255,255,.2);
 }
 
-
-
-
-
+.ui-autocomplete {
+    background: #111111;
+    color: #d19a5a;
+    border: 1px transparent;
+}
+.ui-autocomplete.source:hover {
+    background: #303030;
+}
+.ui-menu .ui-menu-item a{
+    color: #d19a5a;
+    font-family: Inconsolata, monospace;
+    font-size: clamp(3vmin,100%,1vmax);
+}
 /*A fazer - Mudar o Tema*/
 /*Main page  final #04*/
