@@ -154,7 +154,7 @@ function closeError(){
 }
 
 
-//Fazer --  Continuar o processo de criação do site através do backend(blocos de programação), e estilizar de certo modo
+//Fazer --  Continuar o processo de criação do site através do backend(blocos de programação), e estilizar de certo modo, colocar o jquery no github
 
 
 // Hover 

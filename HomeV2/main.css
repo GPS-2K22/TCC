@@ -315,7 +315,7 @@ header{
     height: 100%;
     padding: 5em;
 }
-.containerMainPage div:nth-child(1){
+.containerMainPage div{
     margin: 100px;
     justify-content: center;
     display: grid;
@@ -396,11 +396,11 @@ header{
     transition: 0.1s;
     border: none;
 }
-.choseLang label input{
+.choseLang input{
     all: unset;
 }
 
-.choseLang label:nth-child(1) img:hover{
+/*.choseLang label:nth-child(1) img:hover{
     background-color: rgba(255,255,255,.1);
     box-shadow: 0 0 0 .5rem rgba(255,255,255,.1);
 }
@@ -428,7 +428,7 @@ header{
     background-color: rgba(255,255,255,.2);
     box-shadow: 0 0 0 .5rem rgba(255,255,255,.2);
 }
-
+*/
 .ui-autocomplete {
     background: #111111;
     color: #d19a5a;
@@ -442,5 +442,59 @@ header{
     font-family: Inconsolata, monospace;
     font-size: clamp(3vmin,100%,1vmax);
 }
+
+.container-first{
+    text-align: center;
+    color:  #fff;
+    height: 100%;
+    padding: 5em;
+}
+
+.container-code{
+    margin-top: 200px;
+}
+.code{
+    background-color: #1e1e1e;
+    height: 500px;
+    width: 1200px;
+}
+.choseLang{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 0;
+}
+.code div{
+    background-color: #303030;
+    border: 1px solid #000;
+    font-size: clamp(1vmin,100%,10vmax);
+}
+
+.choseLang label{
+    background-color: #323232;
+    padding: 0.5em 1em 0.5em 1em;
+    border: 1px solid #111111;
+    cursor: pointer;
+    transition: 0.1s;
+    user-select: none;
+    width: 100%;
+}
+.choseLang label:hover{
+    width: 250%;
+    background-color: #4b4b4b;
+    padding: 0.5em 1.5em 0.5em 1.5em;
+}
+.choseLang #JSselect:checked + label{
+    background-color: #4b4b4b;
+    width: 200%;
+}
+.choseLang #pyselect:checked + label{
+    background-color: #4b4b4b;
+    width: 200%;
+}
+.choseLang #PHPselect:checked + label{
+    background-color: #4b4b4b;
+    width: 200%;
+}
+
 /*A fazer - Mudar o Tema*/
 /*Main page  final #04*/
