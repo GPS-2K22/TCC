@@ -447,16 +447,30 @@ header{
     text-align: center;
     color:  #fff;
     height: 100%;
+    font-size: clamp(1vmin,100%,1vmax);
     padding: 5em;
 }
-
+.btn-translate{
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+}
+.btn-translate:focus{
+    box-shadow: 0 0 0 .25rem rgba(255,255,255,.5);;
+}
+.btn-translate:hover{
+    background-color: #fff;
+    color: #000;
+}
 .container-code{
     margin-top: 200px;
 }
 .code{
     background-color: #1e1e1e;
     height: 500px;
-    width: 1200px;
+    margin: auto;
+    font-size: clamp(2vmin,100%,2vmax);
+    width: clamp(50vmin,500px,50vmax);
 }
 .choseLang{
     display: flex;
@@ -467,6 +481,7 @@ header{
     background-color: #303030;
     border: 1px solid #000;
     font-size: clamp(1vmin,100%,10vmax);
+    width: 100%;
 }
 
 .choseLang label{
