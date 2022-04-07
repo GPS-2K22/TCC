@@ -105,3 +105,25 @@ Considerar unidade(fase) de 1 mês,
 Podendo ser dividido em 2 (15 dias)
 Indicar o tempo gasto p/ cada fase e período
 				
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ciclo de Desenvolvimento de Sistemas
+
+Ante Projeto: Fase na qual é verificada a viabilidade do sistema. Para isto é necessário realizar entrevistas para compreender o problema a ser 
+solucionado e suas consequências. Também e levantado a hipótese (solução inicial) e respectivos benefícios. Por meio de entrevistas são levantados 
+os requisitos do usuário. São definidas tecnologias a serem aplicadas na solução e formalizada a proposta de TCC. Apenas depois desta análise o projeto 
+é desenvolvido (ou não).
+
+Projeto Lógico: Fase de planejamento na qual são desenvolvidos alguns documentos, por exemplo: DE-R, ME-R, cronograma, diagrama de caso e uso, 
+diagramas de classe, diagrama de objetos, protótipo do layout, entre outros, de acordo com o tema de TCC. O cronograma é desenvolvido nesta fase.
+
+Projeto Físico: Nesta fase, os documentos definidos no projeto lógico irão seguir de base para o desenvolvimento do sistema, permitindo por exemplo
+criar a base de dados, as telas que irão compor o sistema, criação de personagens, animações, cenários, entre outros de acordo com o tema do TCC.
+
+Implementação: Nesta fase é desenvolvido um protótipo do sistema, destacando as principais funcionalidades.
+
+Testes: São realizados durante o desenvolvimento
+
+Validação: Realizado pelo professor no período de prévia do TCC.
+
+*Documentação ocorre em paralelo. O ciclo faz parte da metodologia do trabalho. 
