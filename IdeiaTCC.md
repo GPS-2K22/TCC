@@ -1,32 +1,33 @@
-Título: Aplicação Web voltada ao auxílio em aprendizagem várias liguagem de programação.
+# Título: Aplicação Web voltada ao auxílio em aprendizagem várias liguagem de programação.
 
-Equipe: Guilherme Enache Caetano, Pedro Calderaro Martins, Sandro Roberto Pimentel Junior.
+- Equipe: Guilherme Enache Caetano, Pedro Calderaro Martins, Sandro Roberto Pimentel Junior.
 	
-Problema: Dificuldade no aprendizado de uma nova linguagem pela diferença de algorítmos entre elas.
+- Problema: Dificuldade no aprendizado de uma nova linguagem pela diferença de algorítmos entre elas.
 
-Solução: Desenvolver uma aplicação Web voltada a traduzir os códigos de uma linguagem para outra, dando uma visão mais ampla ao usuário acerca da linguagem que o usuário pretende aprender.
+- Solução: Desenvolver uma aplicação Web voltada a traduzir os códigos de uma linguagem para outra, dando uma visão mais ampla ao usuário acerca da linguagem que o usuário pretende aprender.
 
-Tecnologias: Framework: Jquery, Boostrap e JS; Linguagem: Html5, Css3, PHP, Js, NodeJs ; Banco de Dados: MySql - PHPmyadmin; Plataforma: Web.
+- Tecnologias: Framework: Jquery, Boostrap e JS; Linguagem: Html5, Css3, PHP, Js, NodeJs ; Banco de Dados: MySql - PHPmyadmin; Plataforma: Web.
 
-Aplicação Web voltada ao auxílio em aprendizagem várias linguagens de programação.
+- Aplicação Web voltada ao auxílio em aprendizagem várias linguagens de programação.
 
-Equipe: 
-Guilherme Enache Caetano, 
-Pedro Calderaro Martins, 
-Sandro Roberto Pimentel Junior.
+- Equipe: 
+	- Guilherme Enache Caetano 
+	- Pedro Calderaro Martins 
+	- Sandro Roberto Pimentel Junior
 	
 O problema analisado foi a dificuldade no aprendizado de uma nova linguagem por conta da diferença de algoritmos entre elas, a solução encontrada foi desenvolver uma aplicação web voltada a traduzir códigos de uma linguagem para outra, trazendo uma visão mais ampla ao usuário acerca da linguagem que o mesmo pretende aprender, serão utilizadas as linguagens de html5, css3, PHP, Js e NodeJs, como framework serão utilizados o Jquery, Boostrap e o Js, além disso como banco de dados será utilizado o MySql, PHPmyadmin.
 
 ---------
 
-Requisitos do usuário:
-	- Funcionalidades que o sistema deverá executar
-		- Uso de entrevista
-		- Estudo de caso
-		- Diferencial
-	- R.U.s são decritos no infitivos(desenvolver, projetar, etc.) - Resumo dos RUs -> objetivos específicos
+# Requisitos do usuário:
+- Funcionalidades que o sistema deverá executar:
+	- Uso de entrevista.
+	- Estudo de caso.
+	- Diferencial.
+	- R.U.s são decritos no infitivos(desenvolver, projetar, etc.) 
+	- Resumo dos RUs -> objetivos específicos.
 
-Exemplos de requisitos:
+- Exemplos de requisitos:
 	- Gerenciar aulnos
 		- Senha composta pelos 4 dígitos (primeiros) do CPF, mais 4 dígitos aleatórios
 		- Nome do usuário composto por abreviação do primeiro nome, mais o sobrenome
@@ -37,7 +38,7 @@ Exemplos de requisitos:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
-O que eu deveria aprender para conseguir converter o trecho de código abaixo que está em javascript para python?
+# O que eu deveria aprender para conseguir converter o trecho de código abaixo que está em javascript para python?
 
 https://kalkicode.com/ai/online-java-to-javascript-converter#code-out
 
@@ -89,17 +90,20 @@ https://kalkicode.com/ai/online-java-to-javascript-converter#code-out
 
 Na última aula será avaliado o que produzirem nessa aula - Critério resolução de problemas 
 
-Cronograma
+# Cronograma
 Tabela que relaciona atividades com tempo de execução. O cronograma de desenvolvimento de sistemas, deve conter as seguintes fases e seus respectivos detalhes: 
 
-*Documentação em paralelo    {- arte projeto
-			      - projeto lógico
-			      - projeto físico
-			      - implementação(codificação)
-			      testes, testes de integração validação}
-*Acrescentamos também	     {- documentação
-			      - prévia do tcc
-			      - apresentação
+- Documentação em paralelo:
+	- arte projeto
+	- projeto lógico
+	- projeto físico
+	- implementação(codificação) 
+	- testes, testes de integração, validação    
+			   
+- Acrescentamos também:	  
+	-  documentação
+	-  prévia do tcc    
+	-  apresentação
 
 Considerar unidade(fase) de 1 mês,
 Podendo ser dividido em 2 (15 dias)
@@ -107,34 +111,37 @@ Indicar o tempo gasto p/ cada fase e período
 				
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
-Ciclo de Desenvolvimento de Sistemas
+# Ciclo de Desenvolvimento de Sistemas
 
-Ante Projeto: Fase na qual é verificada a viabilidade do sistema. Para isto é necessário realizar entrevistas para compreender o problema a ser 
-solucionado e suas consequências. Também e levantado a hipótese (solução inicial) e respectivos benefícios. Por meio de entrevistas são levantados 
-os requisitos do usuário. São definidas tecnologias a serem aplicadas na solução e formalizada a proposta de TCC. Apenas depois desta análise o projeto 
-é desenvolvido (ou não).
+- Ante Projeto: 
+	- Fase na qual é verificada a viabilidade do sistema. Para isto é necessário realizar entrevistas para compreender o problema a ser solucionado e suas consequências. Também e levantado a hipótese (solução inicial) e respectivos benefícios. Por meio de entrevistas são levantados os requisitos do usuário. São definidas tecnologias a serem aplicadas na solução e formalizada a proposta de TCC. Apenas depois desta análise o projeto é desenvolvido (ou não).
 
-Projeto Lógico: Fase de planejamento na qual são desenvolvidos alguns documentos, por exemplo: DE-R, ME-R, cronograma, diagrama de caso e uso, 
+- Projeto Lógico: 
+	- Fase de planejamento na qual são desenvolvidos alguns documentos, por exemplo: DE-R, ME-R, cronograma, diagrama de caso e uso, 
 diagramas de classe, diagrama de objetos, protótipo do layout, entre outros, de acordo com o tema de TCC. O cronograma é desenvolvido nesta fase.
 
-Projeto Físico: Nesta fase, os documentos definidos no projeto lógico irão seguir de base para o desenvolvimento do sistema, permitindo por exemplo
-criar a base de dados, as telas que irão compor o sistema, criação de personagens, animações, cenários, entre outros de acordo com o tema do TCC.
+- Projeto Físico: 
+	- Nesta fase, os documentos definidos no projeto lógico irão seguir de base para o desenvolvimento do sistema, permitindo por exemplo: 
+		- criar a base de dados, as telas que irão compor o sistema, criação de personagens, animações, cenários, entre outros de acordo com o tema do TCC.
 
-Implementação: Nesta fase é desenvolvido um protótipo do sistema, destacando as principais funcionalidades.
+- Implementação: 
+	- Nesta fase é desenvolvido um protótipo do sistema, destacando as principais funcionalidades.
 
-Testes: São realizados durante o desenvolvimento
+- Testes: 
+	- São realizados durante o desenvolvimento
 
-Validação: Realizado pelo professor no período de prévia do TCC.
+- Validação: 
+	- Realizado pelo professor no período de prévia do TCC.
 
-*Documentação ocorre em paralelo. O ciclo faz parte da metodologia do trabalho. 
+- Documentação ocorre em paralelo. O ciclo faz parte da metodologia do trabalho. 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
-Dividir a equipe em 2:
+# Dividir a equipe em 2:
 
 1) Iniciar documentação de acordo com as orientações abaixo:
 
-Introdução, deve conter:
+- Introdução, deve conter:
 	- Definição do tema do tcc (https://rockcontent.com/br/blog/linguagem-de-programacao/)
 	- Histórica e evoluçao do tema tcc https://devskiller.com/pt/historia-da-programacao-idiomas/#:~:text=1970%3A%20PASCAL,que%20era%20f%C3%A1cil%20de%20aprender. https://www.infoescola.com/informatica/historia-da-programacao/
 	- Descrição do problema e principais consequências
@@ -144,18 +151,17 @@ Introdução, deve conter:
 	- Descrição das tecnologias utilizadas na solução e justificativa
 	- Estudo de viabilidade
 	- Objetivo geral do tcc
-
-* Texto em 3°pessoa
+	- Texto em 3° pessoa
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
+# Materiais
+- Material teórico acerca do TCC:
+	- https://drive.google.com/file/d/0B3CsQv03i1ySTndQa0xHUHN0blk/view?resourcekey=0-XhSwQMbWyGWuFsNHIZwqmQ
 
-Material teórico acerca do TCC:
-https://drive.google.com/file/d/0B3CsQv03i1ySTndQa0xHUHN0blk/view?resourcekey=0-XhSwQMbWyGWuFsNHIZwqmQ
+- Material teórico acerca de citações:
+	- https://drive.google.com/file/d/0B3CsQv03i1ySWC1VVlFFS0tYVWM/view?resourcekey=0-MKQRElb8s197YsdDSXIOww
 
-Material teórico acerca de citações:
-https://drive.google.com/file/d/0B3CsQv03i1ySWC1VVlFFS0tYVWM/view?resourcekey=0-MKQRElb8s197YsdDSXIOww
-
-Material acerca do TCC (Rogério):
-https://sites.google.com/site/rogertecmob/exe
+- Material acerca do TCC (Rogério):
+	- https://sites.google.com/site/rogertecmob/exe
 
 
