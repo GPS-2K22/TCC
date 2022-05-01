@@ -143,7 +143,8 @@ diagramas de classe, diagrama de objetos, protótipo do layout, entre outros, de
 
 - Introdução, deve conter:
 	- Definição do tema do tcc (https://rockcontent.com/br/blog/linguagem-de-programacao/)
-	- Histórica e evoluçao do tema tcc https://devskiller.com/pt/historia-da-programacao-idiomas/#:~:text=1970%3A%20PASCAL,que%20era%20f%C3%A1cil%20de%20aprender. https://www.infoescola.com/informatica/historia-da-programacao/
+	- Histórica e evoluçao do tema tcc (https://devskiller.com/pt/historia-da-programacao-idiomas/)
+	- Aprender (https://www.infoescola.com/informatica/historia-da-programacao/)
 	- Descrição do problema e principais consequências
 	- Descrição da solução e principais benefícios
 	- Descrição das principais funcionalidades do sistema
