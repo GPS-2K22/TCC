@@ -1,4 +1,4 @@
-# Título: Aplicação Web com o objetivo auxiliar na aprendizagem várias liguagem de programação.
+# Título: Aplicação Web com o objetivo de auxiliar na aprendizagem várias liguagem de programação.
 
 - Equipe: Guilherme Enache Caetano, Pedro Calderaro Martins, Sandro Roberto Pimentel Junior.
 	
