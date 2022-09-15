@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
 
-
+:root{
+    --bgColor: #fff;
+    --txtColor: #000;
+    --txtColorNav: #fff;
+    --txtFont: 'Open Sans', sans-serif
+}
 * {
     scroll-behavior: smooth;
     margin: 0;
@@ -9,7 +15,8 @@
 }
 body {
    
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--txtFont);
+  color: var(--txtColor);
 
 }
 
@@ -17,7 +24,7 @@ body {
 
 nav {
   
-    width: 100%;
+    /* width: 100%;
 
     display: flex;
 
@@ -25,7 +32,7 @@ nav {
 
     color: #fff;
 
-    justify-content: space-between;
+    justify-content: space-between; */
     
 
 }
@@ -48,7 +55,7 @@ nav a:nth-child(3) {
 
 nav li {
 
-    float: left;
+    /* float: left;
 
     font-size: 120%;
 
@@ -57,7 +64,7 @@ nav li {
     margin-left: 20px;
     
     margin-right: 10px;
-   
+    */
 }
 nav img{
     top: -20%;
@@ -134,17 +141,7 @@ nav img{
 }
 
 
-.btn {
-    border-radius: 9px;
-    text-transform: uppercase;
-    font-size: 10px;
-    padding: 10px 5px;
-    cursor: pointer;
-    font-weight: bold;
-    border: none;
-    margin-top: 1rem;
-    user-select: none;
-}
+
 .btn-primary {
     background-color: transparent;
     margin-top: 10%;
@@ -306,8 +303,23 @@ header{
 /*Home page final #02*/
 
 /*Main page  inicio #03*/
-#body2{
-    background-color: #162c35;
+.bodyCode{
+    background-color: var(--bgColor);
+}
+.navbar{
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.navbar li{
+    color: var(--txtColorNav);
+    list-style: none;
+    font-family: 'Inter';
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    user-select: none;
+    cursor: pointer;
 }
 .containerMainPage{
     text-align: center;
@@ -320,19 +332,50 @@ header{
     justify-content: center;
     display: grid;
 }
-
-.command{
-    border: 1px transparent;
-    border-radius: 10px;
-    outline: 0;
-    height: clamp(5vmin,10vh,25vmin);
-    width: clamp(65vmin,100%,25vmax);
-    font-family: Inconsolata, monospace;
-    font-size: clamp(3vmin,100%,1vmax);
-    color: #71e9fd;
-    padding: 1em;
-    background-color: /*#120e16*/ #282a36;
+.label-float{
+    position: relative;
+    padding-top: 13px;
+    padding-bottom: .5em;
 }
+.members{
+    margin-top: 12px;
+}
+.label-float input{
+    border: 0;
+    outline: none;
+    min-width: 250px;
+    font-size: 1.6em;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-appearance:none;
+    padding: 1em;
+    width: 600px;
+    background-color: #f1f1f1;
+    border-radius: 11px;
+}
+
+.label-float input::placeholder{
+    color:transparent;
+}
+.label-float label{
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 1.5em;
+    margin-left: .4em;
+    color: #9b9b9b;
+    transition: all .1s ease-out;
+    font-size: 1.6em;
+    -webkit-transition: all .1s ease-out;
+    -moz-transition: all .1s ease-out;
+}
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label{
+    font-size: 1em;
+    margin-top: 12px;
+} 
 .cond{
     margin-top: 1em;
 }
@@ -346,21 +389,52 @@ header{
 }
 
 .box-translate{
-    margin: 100px;
-    justify-content: left;
+    margin-top: 10em;
     display: grid;
 }
 .userCommand{
-    justify-content: left;
     display: grid;
+    margin: auto;
 }
-.box-translate button:nth-child(4){
-    margin: 50px;
-    margin-left: 35%;
+.box-translate button{
     border: 1px  solid #fff;
     color: #fff;
+    text-transform: lowercase;
+    margin: auto;
     width: clamp(30vmin, 30vw, 30vmin);
-    font-size: clamp(10%,80%,1em);
+    font-size: clamp(10%,80%,1.2em);
+    font-family: 'Inter';
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    background-color: #727272;
+    margin-top: 15em;
+    border-radius: 45px;
+}
+
+  .arrow-red {
+    width: 0; 
+    height: 0; 
+    border-top: 0px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 130px solid #FF4949;
+  }
+  .arrow-blue {
+    width: 0; 
+    height: 0; 
+    border-bottom: 0px solid transparent;
+    border-top: 60px solid transparent;
+    position: absolute;
+    top: 90vh;
+    position: fixed;
+    right: 0;
+    border-right: 130px solid #49A7FF;
+  }
+.btn {
+    font-size: 10px;
+    padding: 10px 5px;
+    cursor: pointer;
+    border: none;
+    user-select: none;
 }
 #errorMessage{
     display: none;   
@@ -368,11 +442,7 @@ header{
     margin: 1px;
     margin-bottom: 5px;
 }
-.box-translate button:nth-child(4):hover{
-    color:#000;
-    border: 1px solid #000;
-    background-color: #fff;
-}
+
 .box-translate button:nth-child(4):focus{
     box-shadow:0 0 0 .25rem rgba(255,255,255,.5);
 }
@@ -384,7 +454,7 @@ header{
 
 
 .box-translate input::placeholder{
-    color: #3ab6b7 ;
+    color: #91F9E5 ;
 }
 
 
@@ -427,34 +497,36 @@ header{
     text-align: left;
     font-style: italic;
 }
+.ui-menu-item a f{
+    font-size: 0.8em;
+    text-align: left;
+    margin-left: 10px;
+    animation: advert 1s linear infinite;
+}
+@keyframes advert {
+    0%{
+        color: #fff;
+    }
+    50%{
+        color: yellow;
+    }
+    100%{
+        color: #fff;
+    }
+}
 .ui-menu-item a.ui-state-active{
     background: rgba(112, 130, 134, 0.871);
     color: #71e9fd;
     border-radius: 10px;
     border: none;
 }
-.container-first{
+section{
     text-align: center;
-    color:  #fff;
-    height: 100%;
+    color:  var(--txtColor);
     font-size: clamp(1vmin,100%,1vmax);
-    padding: 5em;
-}
-.btn-translate{
-    background-color: #152830;
-    border: 1px solid #19313c;
-    border-radius: 10px;
-    color: #fff;
 }
 .clean{
     margin-left: 94%;
-}
-.btn-translate:focus{
-    box-shadow: 0 0 0 .25rem rgba(255,255,255,.5);;
-}
-.btn-translate:hover{
-    background-color: #203e4b;
-    color: #fff;
 }
 .container-code{
     margin-top: 200px;
