@@ -170,6 +170,38 @@ criar a base de dados, as telas que irão compor o sistema, criação de persona
 - Testes: São realizados durante o desenvolvimento
 
 - Validação: Realizado pelo professor no período de prévia do TCC.
+
+# Introdução
+
+     - Texto de introdutório (definição do tema, da equipe, prob x consequência, solução x benefícios, hipótese, tecnologias utilizadas, métodologias, trabalhos semelhantes,
+    estudo de viabilidade,  * objetivo geral, resultados esperados
+
+    - Objetivo Geral
+    - Objetivos Específicos
+    - Metodologia
+         * Os resultados gerados, não são visualizadas na metodologia, apenas referenciados e inseridos no em resultados (desenvolvimento)
+           - * tem por base o ciclo de desenvolvimento + * scrum
+               - Ante projeto
+               - Projeto
+                    Projeto Lógico
+                         - cronograma de atividades
+                         - DER + MER
+                         - Diag. Classe
+                         - Diag. de Caso de Uso
+                         -  Esboço do Layout (protótipo)
+                         - Dicionário de Dados
+
+                         ...
+                   Projeto Físico
+                          - Criação de Banco de Dados
+                          - Criação dos formulário (Lauyout)
+                   Implementação (Protótipo)
+                          - Crud (alimentação das tabelas)
+                          - Crud Relacional (alimentação de tabelas relacionadas)
+                          - Desenvolvimento de rotinas específicos 
+                          - Consultas e relatórios
+                          - Permissões e Login
+                   Teste, Teste de integração e Validação
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 # Materiais
 - Material teórico acerca do TCC:
@@ -180,5 +212,8 @@ criar a base de dados, as telas que irão compor o sistema, criação de persona
 
 - Material acerca do TCC (Rogério):
 	- https://sites.google.com/site/rogertecmob/exe
+
+- Metodologia:
+	- https://docs.google.com/document/d/1YzwVrUXWY2cmswfOgSoALQJo6GxFy7pOhY1iy10nRbo/edit?usp=sharing
 
 
