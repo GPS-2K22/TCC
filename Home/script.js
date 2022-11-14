@@ -13,8 +13,8 @@ const AutoCompleteValue =[
 	{name : "while", syntax :'Enquanto', usage: "loop conditional"},
 	{name : "while", syntax :'Enquanto(contar < fim)', usage: "loop conditional", howUse: 'Troque os parametros "contar" e "fim" por valores desejados'},
 
-    {name : "while", syntax :'Escolha-Caso', usage: "loop conditional"},
-	{name : "while", syntax :'Escolha-Caso("case1"; "case2"; "case3"; "case3"; "case4" )', usage: "loop conditional", howUse: 'Troque os parametos "case" pelos casos desejados'}
+    {name : "switch", syntax :'Escolha-Caso', usage: "loop conditional"},
+	{name : "switch", syntax :'Escolha-Caso("case1"; "case2"; "case3"; "case3"; "case4" )', usage: "loop conditional", howUse: 'Troque os parametos "case" pelos casos desejados'}
 ];
 const simbols =["=","==",">=","<=",">","<"];
 const JAVA_api = [
@@ -331,7 +331,9 @@ class Translate {
                 
             }
             if(this.identyType(rawCommand) == "print_no_var"){
-                codeMid.innerText += `${command[0]}("${command[1]}")\n`
+                codeMid.innerHTML += `<print>${command[0]}</print>`
+                codeMid.innerHTML += ` (<string>"${command[1]}"</string>)\n`
+                
                 let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
                 btn.style.display = "none"
@@ -409,7 +411,7 @@ class Translate {
                 
             }
             if(this.identyType(rawCommand) == "print_no_var"){
-                codeMid.innerText += `${command[0]}("${command[1]}")\n`
+                codeMid.innerHTML += `<print>${command[0]}</print>(<string>"${command[1]}"</string>)\n`
                 let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
                 btn.style.display= "none"
@@ -429,7 +431,8 @@ class Translate {
                     translateCallBack(inp.value, "PYTHON")
 
                 }
-                codeMid.innerText += `${command[0]} ${val_1} ${cond} ${val_2}:\n   `
+                codeMid.innerHTML += `<loop>${command[0]}</loop>
+                 <string>${val_1} </string> ${cond} <string>${val_2}</string>:\n   `
             }
             if(this.identyType(rawCommand) == "for"){
 				let init_1 = command[1]
@@ -444,7 +447,7 @@ class Translate {
 				let cg = document.getElementById("command")
 				cg.value = `Para(${init_1} ${init_cond} ${init_2}; ${init_1} ${mid_cond} ${mid_2}; ${end}++)`
                 
-				codeMid.innerText += `${command[0]}  ${init_2} in range ${mid_2}:\n   `
+				codeMid.innerHTML += `<loop>${command[0]}</loop><string>${init_2}</string> in range <string>${mid_2}</string>:\n   `
 				let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
                 btn.style.display= "block"
@@ -452,7 +455,6 @@ class Translate {
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "PYTHON")
-
                 }
 			}
             if(this.identyType(rawCommand) == "while"){
@@ -461,14 +463,16 @@ class Translate {
                 let cond = command[3]
                 let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
+                let lb = document.getElementById("label-cond");
                 btn.style.display= "block"
                 inp.style.display= "block"
+                lb.style.display = "block"
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "PYTHON")
 
                 }
-                codeMid.innerText += `${command[0]}(${val_1} ${cond} ${val_2}):\n   `
+                codeMid.innerHTML += `<loop>${command[0]}</loop>(<string>${val_1}</string> ${cond} <string>${val_2}</string>):\n   `
   
             }
         }
@@ -483,7 +487,7 @@ class Translate {
                 
             }
             if(this.identyType(rawCommand) == "print_no_var"){
-                codeMid.innerText += `${command[0]}("${command[1]}")\n`
+                codeMid.innerHTML += `<print>${command[0]}</print>(<string>"${command[1]}"</string>)\n`
                 let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
                 btn.style.display= "none"
