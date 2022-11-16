@@ -476,9 +476,11 @@ header{
     font-family: 'Inter';
     border-radius: 10px;
     padding: 1em;
+    list-style: none;
 }
 .ui-menu-item div{
     padding: 0.5em;
+    list-style: none;
 }
 .ui-menu-item a{
     color: #000;
@@ -488,12 +490,14 @@ header{
     font-size: 0.8em;
     text-align: left;
     font-style: italic;
+    list-style: none;
 }
 .ui-menu-item a f{
     font-size: 0.8em;
     text-align: left;
     margin-left: 10px;
     animation: advert 1s linear infinite;
+    list-style: none;
 }
 @keyframes advert {
     0%{
