@@ -1,20 +1,26 @@
 const AutoCompleteValue =[
     // Prints
     {name : "print", syntax : 'Escrever', usage: "Escrever uma mensagem no console"},
-    {name : "print", syntax :'Escrever("mensagem")', usage: "Escrever uma mensagem no console", howUse: 'Troque o parametro "mensagem" por um texto desejados'},
-    {name : "print", syntax :'Escrever("mensagem", variavel)', usage: "Escrever uma mensagem no console", howUse:'Troque os parametos "mensagem" e "variavel" por valores desejados'},
+    {name : "print", syntax :'Escrever("mensagem")',
+     usage: "Escrever uma mensagem no console", howUse: 'Troque o parametro "mensagem" por um texto desejados'},
+    {name : "print", syntax :'Escrever("mensagem", variavel)', 
+    usage: "Escrever uma mensagem no console", howUse:'Troque os parametos "mensagem" e "variavel" por valores desejados'},
     // Conditionals
     {name : "if", syntax : 'Se', usage: "Condicional"},
-    {name : "if", syntax :'Se("valor_1" == "valor_2")', usage: "Condicional", howUse: 'Troque os parametros "valor_1", "valor_2" e a "condição" pelos valores e condições desejados'},
+    {name : "if", syntax :'Se("valor_1" == "valor_2")', 
+    usage: "Condicional", howUse: 'Troque os parametros "valor_1", "valor_2" e a "condição" pelos valores e condições desejados'},
 	
 	{name : "for", syntax :'Para', usage: "Count"},
-	{name : "for", syntax :'Para(contar = inicio ;contar < fim; contar++ )', usage: "Count", howUse: 'Troque parametro "inicio" e o "fim" pelos valores desejados'},
+	{name : "for", syntax :'Para(contar = inicio ;contar < fim; contar++ )',
+     usage: "Count", howUse: 'Troque parametro "inicio" e o "fim" pelos valores desejados'},
 	
 	{name : "while", syntax :'Enquanto', usage: "loop conditional"},
-	{name : "while", syntax :'Enquanto(contar < fim)', usage: "loop conditional", howUse: 'Troque os parametros "contar" e "fim" por valores desejados'},
+	{name : "while", syntax :'Enquanto(contar < fim)', usage: "loop conditional", 
+    howUse: 'Troque os parametros "contar" e "fim" por valores desejados'},
 
     {name : "switch", syntax :'Escolha-Caso', usage: "loop conditional"},
-	{name : "switch", syntax :'Escolha-Caso("case1"; "case2"; "case3"; "case3"; "case4" )', usage: "loop conditional", howUse: 'Troque os parametos "case" pelos casos desejados'}
+	{name : "switch", syntax :'Escolha-Caso("case1"; "case2"; "case3"; "case3"; "case4" )', 
+    usage: "loop conditional", howUse: 'Troque os parametos "case" pelos casos desejados'}
 ];
 const simbols =["=","==",">=","<=",">","<"];
 const JAVA_api = [
@@ -30,20 +36,18 @@ const Python_api = [
     {name: "print", syntax: "print",usage:""},
     {name: "if", syntax: "if",usage:""},
     {name:"for", syntax: "for", usage:""},
-    {name:"while", syntax: "while", usage:""}
+    {name:"while", syntax: "while", usage:""},
+    {name: "switch", syntax: "if", usage: ""}
 ]
 const JS_api=[
     {name:"print",syntax:"console.log",usage:""},
     {name:"var",syntax:"var",usage:""},
     {name:"if",syntax:"if",usage:""},
     {name:"while", syntax: "while", usage:""},
-    {name:"for", syntax: "for", usage:""}
+    {name:"for", syntax: "for", usage:""},
+    {name: "switch", syntax: "switch", usage: ""}
 ]
 class Translate {
-    // constructor (userCommand){
-    //     this.command = userCommand
-     
-    // }
     command(com,lang){
         if(lang == "JAVA"){
             return JAVA_api.find(element => element.name == com).syntax

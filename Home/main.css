@@ -350,6 +350,8 @@ header{
     -moz-transition: all .3s ease-out;
     -webkit-appearance:none;
     padding: 1em;
+    font-family: 'Inter';
+    font-weight: bold;
     width: 600px;
     background-color: #f1f1f1;
     border-radius: 11px;
@@ -405,7 +407,7 @@ header{
     text-transform: uppercase;
     letter-spacing: .3em;
     background-color: #727272;
-    margin-top: 15em;
+    margin-top: 5em;
     border-radius: 45px;
 }
 
@@ -469,17 +471,18 @@ header{
 }
 
 .ui-autocomplete {
-    background: #282a36;
-    color: #71e9fd;
-    border-radius: 10px;
+    background: #f1f1f1;
     border: 1px transparent;
+    font-family: 'Inter';
+    border-radius: 10px;
     padding: 1em;
 }
 .ui-menu-item div{
     padding: 0.5em;
 }
 .ui-menu-item a{
-    color: #71e9fd;
+    color: #000;
+    list-style: none;
 }
 .ui-menu-item a p{
     font-size: 0.8em;
@@ -494,20 +497,21 @@ header{
 }
 @keyframes advert {
     0%{
-        color: #fff;
+        color: #d1d1d1;
     }
     50%{
-        color: yellow;
+        color: #49A7FF;
     }
     100%{
-        color: #fff;
+        color: #d1d1d1;
     }
 }
 .ui-menu-item a.ui-state-active{
-    background: rgba(112, 130, 134, 0.871);
-    color: #71e9fd;
+    background: #000;
+    color: #fff;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
 section{
     text-align: center;
@@ -518,7 +522,7 @@ section{
     margin-left: 94%;
 }
 .container-code{
-    margin-top: 200px;
+    margin-top: 10px;
 }
 .code{
     background-color: #d9d9d9;
@@ -531,11 +535,7 @@ section{
     color: #000;
     font-style: italic;
 }
-.choseLang{
-    display: flex;
-    justify-content: space-around;
-    margin-left: 0;
-}
+
 .block{
     font-family: Inconsolata, monospace;
     font-size: clamp(2.5vmin,100%,1vmax);
