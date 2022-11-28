@@ -31,25 +31,43 @@ body {
 header{
     width: 100%;
 }
-@media screen and (max-width: 740px) {
 
-}
 
-@media screen and (max-width: 1020px) {
-   
-}
 
 /*Home page final #02*/
 
 /*Main page  inicio #03*/
-.bodyCode{
-    background-color: var(--bgColor);
-}
+.arrow-red {
+    width: 0; 
+    height: 0; 
+    border-top: 0px solid transparent;
+    transition: .1s;
+  }
+  .arrow-blue {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 0; 
+    height: 0; 
+    border-bottom: 0px solid transparent;
+    transition: .1s;
+  }
 .navbar{
     background-color: #000;
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    transition: .1s;
+}
+.navbar ul{
+    display: flex;
+}
+.navbar ul li{
+    padding-left: 1em;
+}
+.navbar a{
+    text-decoration: none;
+    color: var(--txtColorNav);
 }
 .navbar li{
     color: var(--txtColorNav);
@@ -91,7 +109,7 @@ header{
     padding: 1em;
     font-family: 'Inter';
     font-weight: bold;
-    width: 600px;
+
     background-color: #f1f1f1;
     border-radius: 11px;
 }
@@ -150,24 +168,6 @@ header{
     border-radius: 45px;
 }
 
-  .arrow-red {
-    width: 0; 
-    height: 0; 
-    border-top: 0px solid transparent;
-    border-bottom: 60px solid transparent;
-    border-left: 130px solid #FF4949;
-  }
-  .arrow-blue {
-    width: 0; 
-    height: 0; 
-    border-bottom: 0px solid transparent;
-    border-top: 60px solid transparent;
-    position: absolute;
-    top: 90vh;
-    position: fixed;
-    right: 0;
-    border-right: 130px solid #49A7FF;
-  }
 .btn {
     font-size: 10px;
     padding: 10px 5px;
@@ -199,11 +199,7 @@ header{
 
 
 
-.choseLang{
-    margin: 10px 10px 10px 10px;
-    display: flex;
-    justify-content: space-around;
-}
+
 
 .choseLang input{
     all: unset;
@@ -270,10 +266,7 @@ section{
 }
 .code{
     background-color: #d9d9d9;
-    height: 500px;
-    margin: auto;
     font-size: clamp(2vmin,100%,2vmax);
-    width: clamp(50vmin,1200px,50vmax);
 }
 .output{
     color: #000;
@@ -289,9 +282,10 @@ section{
     margin-bottom: 2em;
     content: counter(line);
     text-align: left;
-    padding-left: 2em;
 }
-
+.choseLang{
+    margin: auto;
+}
 .choseLang label{
     background-color: #d9d9d9;
     padding: 0.5em 1em 0.5em 1em;
@@ -304,10 +298,8 @@ section{
     cursor: pointer;
     transition: 0.1s;
     user-select: none;
-    width: 100%;
 }
 .choseLang label:hover{
-    width: 250%;
     background-color: #878787;
     color: #fff;
     padding: 0.5em 1.5em 0.5em 1.5em;
@@ -316,7 +308,6 @@ section{
 .choseLang :checked + label{
     background-color: #727272;
     color: #fff;
-    width: 200%;
 }
 print{
     color: #02B3FF;

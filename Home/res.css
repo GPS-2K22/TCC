@@ -1,0 +1,77 @@
+@media screen and (max-width: 350px) {
+    .navbar li{
+        font-size: .5em;
+    }
+    .arrow-blue{
+        border-top: 50px solid transparent;
+        border-right: 90px solid #49A7FF;
+    }
+    .label-float input{
+        min-width: 250px;
+        width: 300px;
+
+    }
+    .arrow-red{
+        border-bottom: 50px solid transparent;
+        border-left: 90px solid #FF4949;
+    }
+    .code{
+        width: 332px;
+        height: 150px;
+    }
+    .choseLang{
+        display: grid;
+    }
+    .choseLang label{
+        width: 40%;
+        
+    }
+
+    
+}
+@media screen and (min-width: 351px) {
+    .arrow-blue{
+        border-top: 60px solid transparent;
+        border-right: 130px solid #49A7FF;
+    }
+    .arrow-red{
+        border-bottom: 60px solid transparent;
+        border-left: 130px solid #FF4949;
+    }
+    .choseLang{
+        display: grid;
+    }
+    .code{
+        width: 450px;
+        height: 150px;
+    }
+    .label-float input{
+        min-width: 250px;
+        width: 400px;
+
+    }
+}
+@media screen and (min-width: 800px) {
+    .choseLang{
+        display: flex;
+    }
+    .choseLang label{
+        width: 100%;
+        
+    }
+    .choseLang :checked + label{
+        width: 200%;
+    }
+    .choseLang label:hover{
+        width: 250%;
+    }
+    .code{
+        width: 1050px;
+        height: 250px;
+    }
+    .label-float input{
+        min-width: 250px;
+        width: 600px;
+
+    }
+}
