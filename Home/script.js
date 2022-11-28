@@ -1,4 +1,4 @@
-const AutoCompleteValue =[
+const PseudoCode =[
     // Prints
     {name : "print", syntax : 'Escrever', usage: "Escrever uma mensagem no console"},
     {name : "print", syntax :'Escrever("mensagem")',
@@ -69,7 +69,7 @@ class Translate {
             }
         }
         
-        let command = whatIs(rawcommand.split("(")[0], AutoCompleteValue);
+        let command = whatIs(rawcommand.split("(")[0], PseudoCode);
         if(command == 'if'){
             return "if"    
         }
@@ -103,9 +103,9 @@ class Translate {
         }
         function hare(request){
             let command = request.split("(")[0]
-            for(let i = 0;i <= AutoCompleteValue.length;i++){
-                if(command == AutoCompleteValue[i].syntax){
-                    return AutoCompleteValue[i].name;
+            for(let i = 0;i <= PseudoCode.length;i++){
+                if(command == PseudoCode[i].syntax){
+                    return PseudoCode[i].name;
                 }
             }
         }
@@ -577,7 +577,7 @@ $(function(){
     $('#command').autocomplete({
         minLength: 2,
 		source: function (request, response) {
-			response($.map(AutoCompleteValue, function (obj, key) {
+			response($.map(PseudoCode, function (obj, key) {
 				
 				var name = obj.syntax.toUpperCase();
 				
@@ -604,7 +604,7 @@ $(function(){
     $('#cond').autocomplete({
         minLength: 2,
 		source: function (request, response) {
-			response($.map(AutoCompleteValue, function (obj, key) {
+			response($.map(PseudoCode, function (obj, key) {
 				
 				var name = obj.syntax.toUpperCase();
 				
