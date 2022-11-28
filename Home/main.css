@@ -7,6 +7,9 @@
     --txtColorNav: #fff;
     --txtFont: 'Open Sans', sans-serif
 }
+a{
+    text-decoration: none;
+}
 * {
     scroll-behavior: smooth;
     margin: 0;
@@ -57,6 +60,7 @@ header{
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    color: var(--txtColorNav);
     transition: .1s;
 }
 .navbar ul{
