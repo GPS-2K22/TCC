@@ -2,17 +2,21 @@ const PseudoCode =[
     // Prints
     {name : "print", syntax : 'Escrever', usage: "Escrever uma mensagem no console"},
     {name : "print", syntax :'Escrever("mensagem")',
-     usage: "Escrever uma mensagem no console", howUse: 'Troque o parametro "mensagem" por um texto desejados'},
+     usage: "Escrever uma mensagem no console", 
+     howUse: 'Troque o parametro "mensagem" por um texto desejados'},
     {name : "print", syntax :'Escrever("mensagem", variavel)', 
-    usage: "Escrever uma mensagem no console", howUse:'Troque os parametos "mensagem" e "variavel" por valores desejados'},
+    usage: "Escrever uma mensagem no console", 
+    howUse:'Troque os parametos "mensagem" e "variavel" por valores desejados'},
     // Conditionals
     {name : "if", syntax : 'Se', usage: "Condicional"},
     {name : "if", syntax :'Se("valor_1" == "valor_2")', 
-    usage: "Condicional", howUse: 'Troque os parametros "valor_1", "valor_2" e a "condição" pelos valores e condições desejados'},
+    usage: "Condicional", 
+    howUse: 'Troque os parametros "valor_1", "valor_2" e a "condição" pelos valores e condições desejados'},
 	
 	{name : "for", syntax :'Para', usage: "Count"},
 	{name : "for", syntax :'Para(contar = inicio ;contar < fim; contar++ )',
-     usage: "Count", howUse: 'Troque parametro "inicio" e o "fim" pelos valores desejados'},
+     usage: "Count", 
+     howUse: 'Troque parametro "inicio" e o "fim" pelos valores desejados'},
 	
 	{name : "while", syntax :'Enquanto', usage: "loop conditional"},
 	{name : "while", syntax :'Enquanto(contar < fim)', usage: "loop conditional", 
@@ -20,14 +24,15 @@ const PseudoCode =[
 
     {name : "switch", syntax :'Escolha-Caso', usage: "loop conditional"},
 	{name : "switch", syntax :'Escolha-Caso("case1"; "case2"; "case3"; "case3"; "case4" )', 
-    usage: "loop conditional", howUse: 'Troque os parametos "case" pelos casos desejados'}
+    usage: "loop conditional", 
+    howUse: 'Troque os parametos "case" pelos casos desejados'}
 ];
 const simbols =["=","==",">=","<=",">","<"];
 const JAVA_api = [
     {name:"public_void", syntax: "public static void main(String args[])", usage:""},
     {name:"print", syntax: "System.out.println", usage:""},
     {name:"start_class", syntax: "class", usage:""},
-    {name:"str", syntax: "String", usage:""},
+    {name:"int", syntax: "Integer", usage:""},
     {name:"if", syntax: "if", usage:""},
 	{name:"for", syntax: "for", usage:""},
     {name:"while", syntax: "while", usage:""},
@@ -84,7 +89,6 @@ class Translate {
             let variable = rawcommand.split(',')[1];
             if(string != undefined && variable != undefined){
                 return "print_var";
-            
             }
             else if(string != undefined && variable == undefined){
                 return "print_no_var"
@@ -114,9 +118,16 @@ class Translate {
             if(this.identyType(command) == "print_var"){
                 let variable = command.split(',')[1].replace(')','');
                 let string = command.split('"')[1];
+                let varType;
+                if(Number.isInteger(Number(variable))){
+                    varType = "Number"
+                }
+                else{
+                    varType = "String"
+                }
                 for(let i = 0; i <= JAVA_api.length; i++){
                     if(JAVA_api[i].name == hare(command)){ 
-                        return [JAVA_api[i].syntax,variable,string]
+                        return [JAVA_api[i].syntax,variable,string,varType]
                     }    
                 }
             }
@@ -326,8 +337,13 @@ class Translate {
                 count(2)
             }
             if(this.identyType(rawCommand) == "print_var"){
-                codeMid.innerText += `${this.command("str","JAVA")} first_var = ${command[1]}\n`
-                codeMid.innerText += `${command[0]}("${command[2]}", first_var)\n`
+                if(command[3] == "Number"){
+                    codeMid.innerHTML += `int <var>first_var</var> = <string>${command[1]}</string><br>`
+                }
+                if(command[3] == "String"){
+                    codeMid.innerHTML += `String <var>first_var</var> = <string>${command[1]}</string><br>`
+                }
+                codeMid.innerHTML += `<print>${command[0]}</print>(<string>"${command[2]}"</string>, <var>first_var</var>)\n`
                 let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
       

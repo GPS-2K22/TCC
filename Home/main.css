@@ -322,5 +322,25 @@ string{
 loop{
     color: #00b700;
 }
+var{
+    color: #673e3e;
+}
+.about{
+    margin: auto;
+    text-align: center;
+    padding: 1em;
+    width: 400px;
+}
+.about p{
+    font-size:  clamp(10%,80%,1.2em);;
+}
+.bg{
+    background-color: #000;
+    border-radius: 10px;
+    margin-bottom: 10em;
+}
+.bg img{
+    width: 200px;
+}
 /*A fazer - Mudar o Tema*/
 /*Main page  final #04*/
