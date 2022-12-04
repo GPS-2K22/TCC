@@ -1,6 +1,6 @@
 const PseudoCode =[
     // Prints
-    {name : "print", syntax : 'Escrever', usage: "Escrever uma mensagem no console"},
+    {name : "print", syntax : 'escrever', usage: "Escrever uma mensagem no console"},
     {name : "print", syntax :'Escrever("mensagem")',
      usage: "Escrever uma mensagem no console", 
      howUse: 'Troque o parametro "mensagem" por um texto desejados'},
@@ -8,22 +8,22 @@ const PseudoCode =[
     usage: "Escrever uma mensagem no console", 
     howUse:'Troque os parametos "mensagem" e "variavel" por valores desejados'},
     // Conditionals
-    {name : "if", syntax : 'Se', usage: "Condicional"},
+    {name : "if", syntax : 'se', usage: "Condicional"},
     {name : "if", syntax :'Se("valor_1" == "valor_2")', 
     usage: "Condicional", 
     howUse: 'Troque os parametros "valor_1", "valor_2" e a "condição" pelos valores e condições desejados'},
 	
-	{name : "for", syntax :'Para', usage: "Count"},
+	{name : "for", syntax :'para', usage: "Count"},
 	{name : "for", syntax :'Para(contar = inicio ;contar < fim; contar++ )',
      usage: "Count", 
      howUse: 'Troque parametro "inicio" e o "fim" pelos valores desejados'},
 	
-	{name : "while", syntax :'Enquanto', usage: "loop conditional"},
+	{name : "while", syntax :'enquanto', usage: "loop conditional"},
 	{name : "while", syntax :'Enquanto(contar < fim)', usage: "loop conditional", 
     howUse: 'Troque os parametros "contar" e "fim" por valores desejados'},
 
-    {name : "switch", syntax :'Escolha-Caso', usage: "loop conditional"},
-	{name : "switch", syntax :'Escolha-Caso("case1"; "case2"; "case3"; "case3"; "case4" )', 
+    {name : "switch", syntax :'escolha-caso', usage: "loop conditional"},
+	{name : "switch", syntax :'Escolha-Caso("case1"; "case2"; "case3"; "case4"; "case5" )', 
     usage: "loop conditional", 
     howUse: 'Troque os parametos "case" pelos casos desejados'}
 ];
@@ -36,6 +36,7 @@ const JAVA_api = [
     {name:"if", syntax: "if", usage:""},
 	{name:"for", syntax: "for", usage:""},
     {name:"while", syntax: "while", usage:""},
+    {name:"switch", syntax: "switch", usage:""}
 ]
 const Python_api = [
     {name: "print", syntax: "print",usage:""},
@@ -73,8 +74,8 @@ class Translate {
                 }
             }
         }
-        
-        let command = whatIs(rawcommand.split("(")[0], PseudoCode);
+        let pseudoCommand = rawcommand.split("(")[0];
+        let command = whatIs(pseudoCommand.toLowerCase(), PseudoCode);
         if(command == 'if'){
             return "if"    
         }
@@ -83,6 +84,9 @@ class Translate {
         }
 		if(command == 'for'){
             return "for"    
+        }
+        if(command == 'switch'){
+            return "switch"    
         }
         if(command == 'print'){
             let string = rawcommand.split('"')[1];
@@ -106,9 +110,9 @@ class Translate {
             }
         }
         function hare(request){
-            let command = request.split("(")[0]
+            let pseudoCommand = request.split("(")[0]
             for(let i = 0;i <= PseudoCode.length;i++){
-                if(command == PseudoCode[i].syntax){
+                if(pseudoCommand.toLowerCase() == PseudoCode[i].syntax){
                     return PseudoCode[i].name;
                 }
             }
@@ -185,6 +189,29 @@ class Translate {
                         return [JAVA_api[i].syntax,value_1,value_2,conditional]
                     }    
                 }
+            }
+            else if(this.identyType(command) == "switch"){
+                let afterCommand = command.split("(")[1].replace(')', '')
+                let commas = afterCommand.split(";")
+                let switchs = document.getElementById('switch')
+                let destroyBefore = switchs.getElementsByClassName("cases")
+                
+                if(destroyBefore !== null){
+                    console.log("aqui")
+                    for(let i = destroyBefore.length - 1 ; i >= 0; i--){
+                    destroyBefore[i].remove()
+                    }
+                }   
+                let a = 0;
+                for(a in commas){
+                    let cases = document.createElement("input")
+                    let switchCase = document.getElementById("switch")
+                    cases.className = "cases"
+                    switchCase.appendChild(cases)
+                }
+                
+                
+
             }
         }
         else if(lang == "PYTHON"){
@@ -325,7 +352,7 @@ class Translate {
                 codeEnd.innerText += "}\n"
             }
         }
-    
+        
         let codeStart = document.getElementById("start");
         let codeMid = document.getElementById("mid");
         let codeEnd = document.getElementById("end");
@@ -333,9 +360,11 @@ class Translate {
             codeStart.innerText = ``;
             codeStart.innerText += `${this.command("start_class","JAVA")} Primeira_Classe{`;
             codeStart.innerText += `\n${this.command("public_void","JAVA")}{`
+            
             if(codeEnd.innerHTML == ""){
                 count(2)
             }
+            
             if(this.identyType(rawCommand) == "print_var"){
                 if(command[3] == "Number"){
                     codeMid.innerHTML += `int <var>first_var</var> = <string>${command[1]}</string><br>`
@@ -346,6 +375,9 @@ class Translate {
                 codeMid.innerHTML += `<print>${command[0]}</print>(<string>"${command[2]}"</string>, <var>first_var</var>)\n`
                 let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
+                btn.style.display = "none"
+                inp.style.display = "none"
+                inp.value = ''
       
                 
                 
@@ -358,6 +390,7 @@ class Translate {
                 let btn = document.getElementById("condButton");
                 btn.style.display = "none"
                 inp.style.display = "none"
+                inp.value = ''
                 
             }
 			if(this.identyType(rawCommand) == "for"){
@@ -374,7 +407,14 @@ class Translate {
 				let cg = document.getElementById("command")
 				cg.value = `Para(${init_1} ${init_cond} ${init_2}; ${init_1} ${mid_cond} ${mid_2}; ${end}++)`
                 
-				codeMid.innerText += `${command[0]}(${init_1} ${init_cond} ${init_2}; ${init_1} ${mid_cond} ${mid_2}; ${end}++){\n   `
+				codeMid.innerHTML += `<loop>${command[0]}</loop>(
+                    <var>${init_1} </var>
+                    ${init_cond} 
+                    <string>${init_2}</string>; 
+                    <var>${init_1}</var> 
+                    ${mid_cond} 
+                    <string>${mid_2}</string>; 
+                    <var>${end}++</var>){<br>   `
 				count(1)
 				let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
@@ -399,7 +439,10 @@ class Translate {
                     translateCallBack(inp.value, "JAVA")
 
                 }
-                codeMid.innerText += `${command[0]}(${val_1} ${cond} ${val_2}){\n   `
+                codeMid.innerHTML += `int <var>count</var> = <string>${val_1}</string><br>`
+                codeMid.innerHTML += `<loop>${command[0]}</loop>(<var>count</var> ${cond} 
+                <string>${val_2}</string>){<br> `
+                codeEnd.insertAdjacentHTML( `afterbegin`,`<var>count</var>++<br>`)
                 count(1)
             }
             if(this.identyType(rawCommand) == "if"){
@@ -415,7 +458,9 @@ class Translate {
                     translateCallBack(inp.value, "JAVA")
 
                 }
-                codeMid.innerText += `${command[0]}(${val_1} ${cond} ${val_2}){\n   `
+                codeMid.innerHTML += `<loop>${command[0]}</loop>(<string>${val_1}</string> 
+                ${cond}
+                 <string><${val_2}</string>){<br>   `
                 count(1)
             }
            
@@ -452,7 +497,7 @@ class Translate {
 
                 }
                 codeMid.innerHTML += `<loop>${command[0]}</loop>
-                 <string>${val_1} </string> ${cond} <string>${val_2}</string>:\n   `
+                 <string>${val_1} </string> ${cond} <string>${val_2}</string>: <br>`
             }
             if(this.identyType(rawCommand) == "for"){
 				let init_1 = command[1]
@@ -554,7 +599,8 @@ class Translate {
                     
 
                 }
-                codeMid.innerText += `${command[0]}(${val_1} ${cond} ${val_2}){\n   `
+                codeMid.innerHTML += `<loop>${command[0]}</loop>(<string>${val_1}</string>
+                 ${cond} <string>${val_2}</string>){<br>  `
                 count(1)
             }
             if(this.identyType(rawCommand) == "while"){
@@ -637,10 +683,10 @@ $(function(){
 		}
     }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
         return $( "<li></li>" )
-            .data( "item.autocomplete", item )
-            .append( "<a>" + item.label + "<p>"+ item.desc + "</p> <p>"+ item.use + "</p>" )
-            .append( "</a>" )
-            .appendTo( ul );
+        .data( "item.autocomplete", item )
+        .append( "<a>" + item.label + "<p>"+ item.desc + "</p> <f>"+ item.use + "</f>" )
+        .append( "</a>" )
+        .appendTo( ul );
             
     };
 });

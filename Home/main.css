@@ -133,6 +133,7 @@ header{
     font-size: 1.6em;
     -webkit-transition: all .1s ease-out;
     -moz-transition: all .1s ease-out;
+    user-select: none;
 }
 
 .label-float input:focus + label,
@@ -341,6 +342,26 @@ var{
 }
 .bg img{
     width: 200px;
+}
+#switch{
+    display: grid;
+    grid-row-gap: 10px;
+}
+.cases{
+    border: 0;
+    outline: none;
+    min-width: 250px;
+    font-size: 1.6em;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-appearance:none;
+    padding: 1em;
+    font-family: 'Inter';
+    font-weight: bold;
+
+    background-color: #f1f1f1;
+    border-radius: 11px;
 }
 /*A fazer - Mudar o Tema*/
 /*Main page  final #04*/
