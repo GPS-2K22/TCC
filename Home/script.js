@@ -537,6 +537,8 @@ class Translate {
         let codeEnd = document.getElementById("end");
         if(this.identyType(rawCommand) == "error"){
             codeMid.innerHTML = `<break>Infelizmente o comando não existe ou foi digitado errado, tente novamente</break>`
+            codeEnd.innerHTML = ``
+            codeStart.innerHTML = ``
         }
         if(lang == "JAVA"){
             codeStart.innerText = ``;
@@ -668,14 +670,19 @@ class Translate {
                 }   
                 btn.onclick = function()
                 {
-                    translateCallBack(inp.value, "JAVA")
+               
+                    translateCallBack(inp.value, "JAVA")    
+                     btn.style.display= "none"
+                    inp.style.display= "none"
+                    inp.value = ``
                     let inpElse = document.getElementById("else")
                     let btnElse = document.getElementById("elseButton") 
                     inpElse.style.display = "block"
                     btnElse.style.display = "block"
                     inpElse.value = ``
                     btnElse.onclick = function(){
-                        codeMid.innerHTML += `<br>}<br><break>else{</break><br>`
+
+                        codeMid.innerHTML += `<br>}<br><break>else</break>{<br>`
                         translateCallBack(inpElse.value, "JAVA")
                         inpElse.style.display = "none"
                         btnElse.style.display = "none"
@@ -736,14 +743,18 @@ class Translate {
                 inp.style.display= "block"
                 btn.onclick = function()
                 {
+
                     translateCallBack(inp.value, "PYTHON")
+                    btn.style.display= "none"
+                    inp.style.display= "none"
+                    inp.value = ``
                     let inpElse = document.getElementById("else")
                     let btnElse = document.getElementById("elseButton") 
                     inpElse.style.display = "block"
                     btnElse.style.display = "block"
                     inpElse.value = ``
                     btnElse.onclick = function(){
-                        codeMid.innerHTML += `<br><break>else:</break><br>`
+                        codeMid.innerHTML += `<br><break>else</break>:<br>`
                         translateCallBack(inpElse.value, "PYTHON")
                         inpElse.style.display = "none"
                         btnElse.style.display = "none"
@@ -869,13 +880,16 @@ class Translate {
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "JS")
+                    btn.style.display= "none"
+                    inp.style.display= "none"
+                    inp.value = ``
                     let inpElse = document.getElementById("else")
                     let btnElse = document.getElementById("elseButton") 
                     inpElse.style.display = "block"
                     btnElse.style.display = "block"
                     inpElse.value = ``
                     btnElse.onclick = function(){
-                        codeMid.innerHTML += `<br>}<br><break>else{</break><br>`
+                        codeMid.innerHTML += `<br>}<br><break>else</break>{<br>`
                         translateCallBack(inpElse.value, "JS")
                         inpElse.style.display = "none"
                         btnElse.style.display = "none"
@@ -1063,12 +1077,16 @@ function translateCommand(){
         let LangSelect = document.querySelector('input[name="lang"]:checked').value;
         let commandFromUser = document.getElementById("command").value;
         let label = document.getElementById("lable")
-        // //label.style.display = "none";
+    
 
         let switchs = document.getElementById('switch')
         let divs = switchs.querySelector("div")
         let destroyBeforeInp = switchs.getElementsByClassName("cases")
         let destroyBeforeBtn = switchs.getElementsByClassName("casesBtn")
+        let inp = document.getElementById("cond")
+        let btn = document.getElementById("condButton");
+        btn.style.display= "none"
+        inp.style.display= "none"
         
         if(destroyBeforeInp !== null){
             for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
