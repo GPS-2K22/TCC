@@ -79,16 +79,16 @@ class Translate {
         if(command == 'if'){
             return "if"    
         }
-        if(command == 'while'){
+        else if(command == 'while'){
             return "while"    
         }
-		if(command == 'for'){
+		else if(command == 'for'){
             return "for"    
         }
-        if(command == 'switch'){
+        else if(command == 'switch'){
             return "switch"    
         }
-        if(command == 'print'){
+        else if(command == 'print'){
             let string = rawcommand.split('"')[1];
             let variable = rawcommand.split(',')[1];
             if(string != undefined && variable != undefined){
@@ -97,9 +97,9 @@ class Translate {
             else if(string != undefined && variable == undefined){
                 return "print_no_var"
             }
-            else{
-                return "error";
-            }
+        }
+        else{
+            return "error";
         }
     }
     identyCommand(command,lang){
@@ -520,6 +520,9 @@ class Translate {
 
             }
         }
+        if(this.identyType(command) == "error"){
+            return "error";
+        }
     }
     structure(rawCommand,command, lang){
         function count(num){
@@ -532,6 +535,9 @@ class Translate {
         let codeStart = document.getElementById("start");
         let codeMid = document.getElementById("mid");
         let codeEnd = document.getElementById("end");
+        if(this.identyType(rawCommand) == "error"){
+            codeMid.innerHTML = `<break>Infelizmente o comando não existe ou foi digitado errado, tente novamente</break>`
+        }
         if(lang == "JAVA"){
             codeStart.innerText = ``;
             codeStart.innerText += `${this.command("start_class","JAVA")} Primeira_Classe{`;
@@ -663,6 +669,22 @@ class Translate {
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "JAVA")
+                    let inpElse = document.getElementById("else")
+                    let btnElse = document.getElementById("elseButton") 
+                    inpElse.style.display = "block"
+                    btnElse.style.display = "block"
+                    inpElse.value = ``
+                    btnElse.onclick = function(){
+                        codeMid.innerHTML += `<br>}<br><break>else{</break><br>`
+                        translateCallBack(inpElse.value, "JAVA")
+                        inpElse.style.display = "none"
+                        btnElse.style.display = "none"
+                        inpElse.value = ``
+                        codeEnd.removeChild()
+                        count(1)
+
+
+                    }
 
                 }
                 codeMid.innerHTML += `<loop>${command[0]}</loop>(<string>${val_1}</string> 
@@ -715,6 +737,20 @@ class Translate {
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "PYTHON")
+                    let inpElse = document.getElementById("else")
+                    let btnElse = document.getElementById("elseButton") 
+                    inpElse.style.display = "block"
+                    btnElse.style.display = "block"
+                    inpElse.value = ``
+                    btnElse.onclick = function(){
+                        codeMid.innerHTML += `<br><break>else:</break><br>`
+                        translateCallBack(inpElse.value, "PYTHON")
+                        inpElse.style.display = "none"
+                        btnElse.style.display = "none"
+                        inpElse.value = ``
+
+
+                    }
 
                 }
                 codeMid.innerHTML += `<loop>${command[0]}</loop>
@@ -833,7 +869,21 @@ class Translate {
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "JS")
-                    
+                    let inpElse = document.getElementById("else")
+                    let btnElse = document.getElementById("elseButton") 
+                    inpElse.style.display = "block"
+                    btnElse.style.display = "block"
+                    inpElse.value = ``
+                    btnElse.onclick = function(){
+                        codeMid.innerHTML += `<br>}<br><break>else{</break><br>`
+                        translateCallBack(inpElse.value, "JS")
+                        inpElse.style.display = "none"
+                        btnElse.style.display = "none"
+                        inpElse.value = ``
+                        codeEnd.removeChild()
+                        count(1)
+                            
+                    }                    
 
                 }
                 codeMid.innerHTML += `<loop>${command[0]}</loop>(<string>${val_1}</string>
@@ -917,6 +967,32 @@ $(function(){
             
     };
     $('#cond').autocomplete({
+        minLength: 2,
+        source: function (request, response) {
+            response($.map(PseudoCode.slice(0,3), function (obj, key) {
+                
+                var name = obj.syntax.toUpperCase();
+                
+                if (name.indexOf(request.term.toUpperCase()) != -1) {				
+                    return {
+                        label: obj.syntax,
+                        desc: obj.usage,
+                        use: obj.howUse
+                    }
+                } else {
+                    return null;
+                }
+            }));			
+        }
+    }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+        return $( "<li></li>" )
+        .data( "item.autocomplete", item )
+        .append( "<a>" + item.label + "<p>"+ item.desc + "</p> <f>"+ item.use + "</f>" )
+        .append( "</a>" )
+        .appendTo( ul );
+            
+    };
+    $('#else').autocomplete({
         minLength: 2,
         source: function (request, response) {
             response($.map(PseudoCode.slice(0,3), function (obj, key) {

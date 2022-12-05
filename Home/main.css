@@ -367,5 +367,24 @@ break{
     background-color: #f1f1f1;
     border-radius: 11px;
 }
+#else{
+    display: none;
+    border: 0;
+    outline: none;
+    min-width: 250px;
+    font-size: 1.6em;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-appearance:none;  
+    padding: 1em;
+    font-family: 'Inter';
+    font-weight: bold;
+    background-color: #f1f1f1;
+    border-radius: 11px;
+}
+#elseButton{
+    display: none;
+}
 /*A fazer - Mudar o Tema*/
 /*Main page  final #04*/
