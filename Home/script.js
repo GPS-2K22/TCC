@@ -201,6 +201,11 @@ class Translate {
                     for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
                     destroyBeforeInp[i].remove()
                     destroyBeforeBtn[i].remove()
+                    let child = switchs.lastElementChild; 
+                    while (child) {
+                        switchs.removeChild(child);
+                        child = switchs.lastElementChild;
+                    }
                     }
                 }   
                 let a = 0;
@@ -223,6 +228,7 @@ class Translate {
                         codeMid.innerHTML += `<br><break>break</break>;`
                         cases.remove()
                         btn.remove()
+                        divs.remove()
     
                     }
                     btn.innerHTML = `Adicionar`
@@ -318,6 +324,11 @@ class Translate {
                     destroyBeforeInp[i].remove()
                     destroyBeforeBtn[i].remove()
                     }
+                    let child = switchs.lastElementChild; 
+                     while (child) {
+                        switchs.removeChild(child);
+                        child = switchs.lastElementChild;
+                    }
                 }   
 
                 let divs = document.createElement("div")
@@ -337,6 +348,7 @@ class Translate {
                     translateCallBack(cases.value, "PYTHON")
                     cases.remove()
                     btn.remove()
+                    divs.remove()
 
                 }
                 btn.innerHTML = `Adicionar`
@@ -364,6 +376,7 @@ class Translate {
                         translateCallBack(cases.value, "PYTHON")
                         cases.remove()
                         btn.remove()
+                        divs.remove()
     
                     }
                     btn.innerHTML = `Adicionar`
@@ -460,6 +473,11 @@ class Translate {
                     destroyBeforeInp[i].remove()
                     destroyBeforeBtn[i].remove()
                     }
+                    let child = switchs.lastElementChild; 
+                    while (child) {
+                        switchs.removeChild(child);
+                        child = switchs.lastElementChild;
+                    }
                 }   
                 let a = 0;
                 for(a in commas){
@@ -481,10 +499,12 @@ class Translate {
                         codeMid.innerHTML += `<br><break>break</break>;`
                         cases.remove()
                         btn.remove()
+                        divs.remove()
     
                     }
                     btn.innerHTML = `Adicionar`
                     divs.appendChild(cases)
+                    divs.className = `divCase`
                     divs.appendChild(btn)
                     switchCase.appendChild(divs)
                 }
@@ -713,7 +733,7 @@ class Translate {
 				let cg = document.getElementById("command")
 				cg.value = `Para(${init_1} ${init_cond} ${init_2}; ${init_1} ${mid_cond} ${mid_2}; ${end}++)`
                 
-				codeMid.innerHTML += `<loop>${command[0]}</loop><string>${init_2}</string> in range <string>${mid_2}</string>:\n   `
+				codeMid.innerHTML += `<loop>${command[0]}</loop><string>${init_2}</string> in range <string>${mid_2}</string>:  <br>  `
 				let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
                 btn.style.display= "block"
@@ -753,9 +773,7 @@ class Translate {
                 btn.style.display = "none"
                 inp.style.display = "none"
                 inp.value = ''
-                let random = Math.floor(Math.random() * commas.length);
-                // codeMid.innerHTML += `<br><loop>if</loop>
-                //     <string>${commas[0]} == ${commas[0]}</string>:`
+
                
                 
             }
@@ -968,8 +986,11 @@ function translateCommand(){
         cleanCode();
         let LangSelect = document.querySelector('input[name="lang"]:checked').value;
         let commandFromUser = document.getElementById("command").value;
+        let label = document.getElementById("lable")
+        // //label.style.display = "none";
 
         let switchs = document.getElementById('switch')
+        let divs = switchs.querySelector("div")
         let destroyBeforeInp = switchs.getElementsByClassName("cases")
         let destroyBeforeBtn = switchs.getElementsByClassName("casesBtn")
         
@@ -977,7 +998,14 @@ function translateCommand(){
             for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
             destroyBeforeInp[i].remove()
             destroyBeforeBtn[i].remove()
+            
+
             }
+        let child = switchs.lastElementChild; 
+        while (child) {
+            switchs.removeChild(child);
+            child = switchs.lastElementChild;
+        }
         }   
         switch(LangSelect){
             case 'Python':
@@ -994,7 +1022,7 @@ function translateCommand(){
 }
 
 const cleanCode = () =>{
-    document.getElementById("start").innerText = ``
-    document.getElementById("mid").innerText = ``
-    document.getElementById("end").innerText = ``
+    document.getElementById("start").innerHTML = ``
+    document.getElementById("mid").innerHTML = ``
+    document.getElementById("end").innerHTML = ``
 }
