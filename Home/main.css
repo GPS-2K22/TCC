@@ -198,7 +198,8 @@ header{
 
 
 .box-translate input::placeholder{
-    color: #91F9E5 ;
+    color:  #9b9b9b;
+    font-size: 0.8em;
 }
 
 
@@ -284,7 +285,6 @@ section{
     color: #000;
     background-color: #d9d9d9;
     width: 100%;
-    margin-bottom: 2em;
     content: counter(line);
     text-align: left;
 }
@@ -326,6 +326,9 @@ loop{
 var{
     color: #673e3e;
 }
+break{
+    color: red;
+}
 .about{
     margin: auto;
     text-align: center;
@@ -344,8 +347,10 @@ var{
     width: 200px;
 }
 #switch{
-    display: grid;
-    grid-row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+ 
 }
 .cases{
     border: 0;
@@ -355,11 +360,10 @@ var{
     transition: all .3s ease-out;
     -webkit-transition: all .3s ease-out;
     -moz-transition: all .3s ease-out;
-    -webkit-appearance:none;
+    -webkit-appearance:none;  
     padding: 1em;
     font-family: 'Inter';
     font-weight: bold;
-
     background-color: #f1f1f1;
     border-radius: 11px;
 }

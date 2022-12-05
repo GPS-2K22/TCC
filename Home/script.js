@@ -194,22 +194,50 @@ class Translate {
                 let afterCommand = command.split("(")[1].replace(')', '')
                 let commas = afterCommand.split(";")
                 let switchs = document.getElementById('switch')
-                let destroyBefore = switchs.getElementsByClassName("cases")
+                let destroyBeforeInp = switchs.getElementsByClassName("cases")
+                let destroyBeforeBtn = switchs.getElementsByClassName("casesBtn")
                 
-                if(destroyBefore !== null){
-                    console.log("aqui")
-                    for(let i = destroyBefore.length - 1 ; i >= 0; i--){
-                    destroyBefore[i].remove()
+                if(destroyBeforeInp !== null){
+                    for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
+                    destroyBeforeInp[i].remove()
+                    destroyBeforeBtn[i].remove()
                     }
                 }   
                 let a = 0;
                 for(a in commas){
+                    let divs = document.createElement("div")
                     let cases = document.createElement("input")
+                    let btn = document.createElement("button")
                     let switchCase = document.getElementById("switch")
                     cases.className = "cases"
-                    switchCase.appendChild(cases)
+                    cases.id = "cases"
+                    cases.placeholder = `Caso: ${commas[a]}`
+                    btn.className = "btn"
+                    btn.className += " casesBtn"
+                    btn.id = `${commas[a]}`
+                    btn.onclick = function(lang)
+                    {   
+                        let codeMid = document.getElementById('mid')
+                        codeMid.innerHTML += `<br><var>case</var> <string>${btn.id}</string>:<br>`
+                        translateCallBack(cases.value, "JAVA")
+                        codeMid.innerHTML += `<br><break>break</break>;`
+                        cases.remove()
+                        btn.remove()
+    
+                    }
+                    btn.innerHTML = `Adicionar`
+                    divs.appendChild(cases)
+                    divs.appendChild(btn)
+                    switchCase.appendChild(divs)
                 }
-                
+                addComplete()
+           
+                for(let i = 0; i <= JAVA_api.length; i++){
+                    if(JAVA_api[i].name == hare(command)){
+                  
+                        return [JAVA_api[i].syntax, commas]
+                    }
+                }
                 
 
             }
@@ -278,6 +306,83 @@ class Translate {
                     }    
                 }
             }
+            else if(this.identyType(command) == "switch"){
+                let afterCommand = command.split("(")[1].replace(')', '')
+                let commas = afterCommand.split(";")
+                let switchs = document.getElementById('switch')
+                let destroyBeforeInp = switchs.getElementsByClassName("cases")
+                let destroyBeforeBtn = switchs.getElementsByClassName("casesBtn")
+                
+                if(destroyBeforeInp !== null){
+                    for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
+                    destroyBeforeInp[i].remove()
+                    destroyBeforeBtn[i].remove()
+                    }
+                }   
+
+                let divs = document.createElement("div")
+                let cases = document.createElement("input")
+                let btn = document.createElement("button")
+                let switchCase = document.getElementById("switch")
+                cases.className = "cases"
+                cases.id = "cases"
+                cases.placeholder = `Caso: ${commas[0]}`
+                btn.className = "btn"
+                btn.className += " casesBtn"
+                btn.id = `${commas[0]}`
+                btn.onclick = function(lang)
+                {   
+                    let codeMid = document.getElementById('mid')
+                    codeMid.innerHTML += `<br><loop>if</loop> <string>${commas[0]} </string>== <string>${btn.id}</string>:<br>`
+                    translateCallBack(cases.value, "PYTHON")
+                    cases.remove()
+                    btn.remove()
+
+                }
+                btn.innerHTML = `Adicionar`
+                divs.appendChild(cases)
+                divs.appendChild(btn)
+                switchCase.appendChild(divs)
+                let size =  commas.slice(1, commas.length)
+                console.log(size)
+                for(let a = 0; a < size.length; a++){
+                    console.log(a)
+                    let divs = document.createElement("div")
+                    let cases = document.createElement("input")
+                    let btn = document.createElement("button")
+                    let switchCase = document.getElementById("switch")
+                    cases.className = "cases"
+                    cases.id = "cases"
+                    cases.placeholder = `Caso: ${size[a]}`
+                    btn.className = "btn"
+                    btn.className += " casesBtn"
+                    btn.id = `${size[a]}`
+                    btn.onclick = function(lang)
+                    {   
+                        let codeMid = document.getElementById('mid')
+                        codeMid.innerHTML += `<br><loop>elif</loop> <string>${commas[0]}</string> == <string>${btn.id}</string>:<br>`
+                        translateCallBack(cases.value, "PYTHON")
+                        cases.remove()
+                        btn.remove()
+    
+                    }
+                    btn.innerHTML = `Adicionar`
+                    divs.appendChild(cases)
+                    divs.appendChild(btn)
+                    switchCase.appendChild(divs)
+                }
+                addComplete()
+           
+                for(let i = 0; i <= Python_api.length; i++){
+                    if(Python_api[i].name == hare(command)){
+                  
+                        return [Python_api[i].syntax, commas]
+                    }
+                }
+                
+
+            }
+            
         }
         else if(lang == "JS"){
             if(this.identyType(command) == "print_var"){
@@ -343,6 +448,57 @@ class Translate {
                     }    
                 }
             }
+            else if(this.identyType(command) == "switch"){
+                let afterCommand = command.split("(")[1].replace(')', '')
+                let commas = afterCommand.split(";")
+                let switchs = document.getElementById('switch')
+                let destroyBeforeInp = switchs.getElementsByClassName("cases")
+                let destroyBeforeBtn = switchs.getElementsByClassName("casesBtn")
+                
+                if(destroyBeforeInp !== null){
+                    for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
+                    destroyBeforeInp[i].remove()
+                    destroyBeforeBtn[i].remove()
+                    }
+                }   
+                let a = 0;
+                for(a in commas){
+                    let divs = document.createElement("div")
+                    let cases = document.createElement("input")
+                    let btn = document.createElement("button")
+                    let switchCase = document.getElementById("switch")
+                    cases.className = "cases"
+                    cases.id = "cases"
+                    cases.placeholder = `Caso: ${commas[a]}`
+                    btn.className = "btn"
+                    btn.className += " casesBtn"
+                    btn.id = `${commas[a]}`
+                    btn.onclick = function(lang)
+                    {   
+                        let codeMid = document.getElementById('mid')
+                        codeMid.innerHTML += `<br><var>case</var> <string>${btn.id}</string>:<br>`
+                        translateCallBack(cases.value, "JS")
+                        codeMid.innerHTML += `<br><break>break</break>;`
+                        cases.remove()
+                        btn.remove()
+    
+                    }
+                    btn.innerHTML = `Adicionar`
+                    divs.appendChild(cases)
+                    divs.appendChild(btn)
+                    switchCase.appendChild(divs)
+                }
+                addComplete()
+           
+                for(let i = 0; i <= JS_api.length; i++){
+                    if(JS_api[i].name == hare(command)){
+                  
+                        return [JS_api[i].syntax, commas]
+                    }
+                }
+                
+
+            }
         }
     }
     structure(rawCommand,command, lang){
@@ -378,6 +534,7 @@ class Translate {
                 btn.style.display = "none"
                 inp.style.display = "none"
                 inp.value = ''
+         
       
                 
                 
@@ -391,6 +548,7 @@ class Translate {
                 btn.style.display = "none"
                 inp.style.display = "none"
                 inp.value = ''
+    
                 
             }
 			if(this.identyType(rawCommand) == "for"){
@@ -420,6 +578,17 @@ class Translate {
                 let btn = document.getElementById("condButton");
                 btn.style.display= "block"
                 inp.style.display= "block"
+                let switchs = document.getElementById('switch')
+                let destroyBeforeInp = switchs.getElementsByClassName("cases")
+                let destroyBeforeBtn = switchs.getElementsByClassName("casesBtn")
+                
+                if(destroyBeforeInp !== null){
+                    for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
+                    destroyBeforeInp[i].remove()
+                    destroyBeforeBtn[i].remove()
+                    }
+                }   
+      
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "JAVA")
@@ -434,6 +603,14 @@ class Translate {
                 let btn = document.getElementById("condButton");
                 btn.style.display= "block"
                 inp.style.display= "block"
+            
+                
+                if(destroyBeforeInp !== null){
+                    for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
+                    destroyBeforeInp[i].remove()
+                    destroyBeforeBtn[i].remove()
+                    }
+                }   
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "JAVA")
@@ -453,6 +630,16 @@ class Translate {
                 let btn = document.getElementById("condButton");
                 btn.style.display= "block"
                 inp.style.display= "block"
+                let switchs = document.getElementById('switch')
+                let destroyBeforeInp = switchs.getElementsByClassName("cases")
+                let destroyBeforeBtn = switchs.getElementsByClassName("casesBtn")
+                
+                if(destroyBeforeInp !== null){
+                    for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
+                    destroyBeforeInp[i].remove()
+                    destroyBeforeBtn[i].remove()
+                    }
+                }   
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "JAVA")
@@ -461,6 +648,20 @@ class Translate {
                 codeMid.innerHTML += `<loop>${command[0]}</loop>(<string>${val_1}</string> 
                 ${cond}
                  <string><${val_2}</string>){<br>   `
+                count(1)
+            }
+            if(this.identyType(rawCommand) == "switch"){
+                let commas = command[1]
+          
+                let inp = document.getElementById("cond")
+                let btn = document.getElementById("condButton");
+                btn.style.display = "none"
+                inp.style.display = "none"
+                inp.value = ''
+                let random = Math.floor(Math.random() * commas.length);
+                codeMid.innerHTML += `<br><loop>${command[0]}</loop>(
+                    <string>${commas[random]}</string>) {`
+               
                 count(1)
             }
            
@@ -537,8 +738,26 @@ class Translate {
                     translateCallBack(inp.value, "PYTHON")
 
                 }
-                codeMid.innerHTML += `<loop>${command[0]}</loop>(<string>${val_1}</string> ${cond} <string>${val_2}</string>):\n   `
+                codeMid.innerHTML += `<var>count</var> = <string>${val_1}</string><br>`
+                codeMid.innerHTML += `<loop>${command[0]}</loop>(<var>count</var> ${cond} 
+                <string>${val_2}</string>):<br> `
+                codeEnd.insertAdjacentHTML( `afterbegin`,`<var>count</var>++<br>`)
+        
   
+            }
+            if(this.identyType(rawCommand) == "switch"){
+                let commas = command[1]
+          
+                let inp = document.getElementById("cond")
+                let btn = document.getElementById("condButton");
+                btn.style.display = "none"
+                inp.style.display = "none"
+                inp.value = ''
+                let random = Math.floor(Math.random() * commas.length);
+                // codeMid.innerHTML += `<br><loop>if</loop>
+                //     <string>${commas[0]} == ${commas[0]}</string>:`
+               
+                
             }
         }
         if(lang == "JS"){
@@ -616,7 +835,24 @@ class Translate {
                     translateCallBack(inp.value, "JS")
 
                 }
-                codeMid.innerText += `${command[0]}(${val_1} ${cond} ${val_2}){\n   `
+                codeMid.innerHTML += `int <var>count</var> = <string>${val_1}</string><br>`
+                codeMid.innerHTML += `<loop>${command[0]}</loop>(<var>count</var> ${cond} 
+                <string>${val_2}</string>){<br> `
+                codeEnd.insertAdjacentHTML( `afterbegin`,`<var>count</var>++<br>`)
+                count(1)
+            }
+            if(this.identyType(rawCommand) == "switch"){
+                let commas = command[1]
+          
+                let inp = document.getElementById("cond")
+                let btn = document.getElementById("condButton");
+                btn.style.display = "none"
+                inp.style.display = "none"
+                inp.value = ''
+                let random = Math.floor(Math.random() * commas.length);
+                codeMid.innerHTML += `<br><loop>${command[0]}</loop>(
+                    <string>${commas[random]}</string>) {`
+               
                 count(1)
             }
         }
@@ -662,25 +898,24 @@ $(function(){
             .appendTo( ul );
             
     };
-
     $('#cond').autocomplete({
         minLength: 2,
-		source: function (request, response) {
-			response($.map(PseudoCode, function (obj, key) {
-				
-				var name = obj.syntax.toUpperCase();
-				
-				if (name.indexOf(request.term.toUpperCase()) != -1) {				
-					return {
-						label: obj.syntax,
+        source: function (request, response) {
+            response($.map(PseudoCode.slice(0,3), function (obj, key) {
+                
+                var name = obj.syntax.toUpperCase();
+                
+                if (name.indexOf(request.term.toUpperCase()) != -1) {				
+                    return {
+                        label: obj.syntax,
                         desc: obj.usage,
                         use: obj.howUse
-					}
-				} else {
-					return null;
-				}
-			}));			
-		}
+                    }
+                } else {
+                    return null;
+                }
+            }));			
+        }
     }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
         return $( "<li></li>" )
         .data( "item.autocomplete", item )
@@ -689,11 +924,61 @@ $(function(){
         .appendTo( ul );
             
     };
+
+
+    
+    
+   
+
 });
+function addComplete(){
+    $('.cases').autocomplete({
+        minLength: 2,
+        source: function (request, response) {
+            response($.map(PseudoCode.slice(0,3), function (obj, key) {
+                
+                console.log((PseudoCode[10].syntax).toUpperCase())			
+                var name = obj.syntax.toUpperCase();
+                if (name.indexOf(request.term.toUpperCase()) != -1) {	
+
+                    return {
+                        label: obj.syntax,
+                        desc: obj.usage,
+                        use: obj.howUse
+                    }
+                }
+            
+            else {
+                    return null;
+                }
+            
+            }));			
+        }
+    }).data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+        return $( "<li></li>" )
+        .data( "item.autocomplete", item )
+        .append( "<a>" + item.label + "<p>"+ item.desc + "</p> <f>"+ item.use + "</f>" )
+        .append( "</a>" )
+        .appendTo( ul );
+            
+    };
+
+}
 function translateCommand(){
         cleanCode();
         let LangSelect = document.querySelector('input[name="lang"]:checked').value;
         let commandFromUser = document.getElementById("command").value;
+
+        let switchs = document.getElementById('switch')
+        let destroyBeforeInp = switchs.getElementsByClassName("cases")
+        let destroyBeforeBtn = switchs.getElementsByClassName("casesBtn")
+        
+        if(destroyBeforeInp !== null){
+            for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
+            destroyBeforeInp[i].remove()
+            destroyBeforeBtn[i].remove()
+            }
+        }   
         switch(LangSelect){
             case 'Python':
                 codeTranslate.translate(commandFromUser, "PYTHON");
