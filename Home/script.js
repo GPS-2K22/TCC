@@ -1,6 +1,7 @@
 const PseudoCode =[
     // Prints
-    {name : "print", syntax : 'escrever', usage: "Escrever uma mensagem no console"},
+    {name : "print", syntax : 'escrever', usage: "Escrever uma mensagem no console",
+    howUse: 'Troque o parametro "mensagem" por um texto desejados'},
     {name : "print", syntax :'Escrever("mensagem")',
      usage: "Escrever uma mensagem no console", 
      howUse: 'Troque o parametro "mensagem" por um texto desejados'},
@@ -8,21 +9,25 @@ const PseudoCode =[
     usage: "Escrever uma mensagem no console", 
     howUse:'Troque os parametos "mensagem" e "variavel" por valores desejados'},
     // Conditionals
-    {name : "if", syntax : 'se', usage: "Condicional"},
+    {name : "if", syntax : 'se', usage: "Condicional",
+    howUse: 'Troque os parametros "valor_1", "valor_2" e a "condição" pelos valores e condições desejados'},
     {name : "if", syntax :'Se("valor_1" == "valor_2")', 
     usage: "Condicional", 
     howUse: 'Troque os parametros "valor_1", "valor_2" e a "condição" pelos valores e condições desejados'},
 	
-	{name : "for", syntax :'para', usage: "Count"},
+	{name : "for", syntax :'para', usage: "Count",
+    howUse: 'Troque parametro "inicio" e o "fim" pelos valores desejados'},
 	{name : "for", syntax :'Para(contar = inicio ;contar < fim; contar++ )',
      usage: "Count", 
      howUse: 'Troque parametro "inicio" e o "fim" pelos valores desejados'},
 	
-	{name : "while", syntax :'enquanto', usage: "loop conditional"},
+	{name : "while", syntax :'enquanto', usage: "loop conditional",
+    howUse: 'Troque os parametros "contar" e "fim" por valores desejados'},
 	{name : "while", syntax :'Enquanto(contar < fim)', usage: "loop conditional", 
     howUse: 'Troque os parametros "contar" e "fim" por valores desejados'},
 
-    {name : "switch", syntax :'escolha-caso', usage: "loop conditional"},
+    {name : "switch", syntax :'escolha-caso', usage: "loop conditional",
+    howUse: 'Troque os parametos "case" pelos casos desejados'},
 	{name : "switch", syntax :'Escolha-Caso("case1"; "case2"; "case3"; "case4"; "case5" )', 
     usage: "loop conditional", 
     howUse: 'Troque os parametos "case" pelos casos desejados'}
@@ -80,6 +85,7 @@ class Translate {
             return "if"    
         }
         else if(command == 'while'){
+            console.log("aqui 1")
             return "while"    
         }
 		else if(command == 'for'){
@@ -633,12 +639,6 @@ class Translate {
                 inp.style.display= "block"
             
                 
-                if(destroyBeforeInp !== null){
-                    for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
-                    destroyBeforeInp[i].remove()
-                    destroyBeforeBtn[i].remove()
-                    }
-                }   
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "JAVA")
@@ -799,7 +799,7 @@ class Translate {
                 let lb = document.getElementById("label-cond");
                 btn.style.display= "block"
                 inp.style.display= "block"
-                lb.style.display = "block"
+             
                 btn.onclick = function()
                 {
                     translateCallBack(inp.value, "PYTHON")
@@ -1076,8 +1076,7 @@ function translateCommand(){
         cleanCode();
         let LangSelect = document.querySelector('input[name="lang"]:checked').value;
         let commandFromUser = document.getElementById("command").value;
-        let label = document.getElementById("lable")
-    
+   
 
         let switchs = document.getElementById('switch')
         let divs = switchs.querySelector("div")
