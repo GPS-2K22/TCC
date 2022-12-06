@@ -717,8 +717,9 @@ class Translate {
         }
         if(lang == "PYTHON"){
             if(this.identyType(rawCommand) == "print_var"){
-                codeMid.innerText += `first_var = ${command[1]}`
-                codeMid.innerText += `\n${command[0]}("${command[2]}", first_var)\n`
+                codeMid.innerHTML += `<br><var>first_var</var> = <string>${command[1]}</string>`
+                codeMid.innerHTML += `<br><print>${command[0]}</print>(
+                    <string>"${command[2]}"</string>, <var>first_var</var>)`
                 let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
                 btn.style.display= "none"
@@ -827,8 +828,9 @@ class Translate {
         }
         if(lang == "JS"){
             if(this.identyType(rawCommand) == "print_var"){
-                codeMid.innerText += `${this.command("var","JS")} first_var = ${command[1]}`
-                codeMid.innerText += `\n${command[0]}("${command[2]}", first_var)\n`
+                codeMid.innerHTML += `<br>var <var>first_var</var> = <string>${command[1]}</string>`
+                codeMid.innerHTML += `<br><print>${command[0]}</print>(
+                    <string>"${command[2]}"</string>, <var>first_var</var>)<br>`
                 let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
                 btn.style.display= "none"
@@ -857,7 +859,11 @@ class Translate {
 				let cg = document.getElementById("command")
 				cg.value = `Para(${init_1} ${init_cond} ${init_2}; ${init_1} ${mid_cond} ${mid_2}; ${end}++)`
                 
-				codeMid.innerText += `${command[0]}(${init_1} ${init_cond} ${init_2}; ${init_1} ${mid_cond} ${mid_2}; ${end}++){\n   `
+				codeMid.innerHTML+= `<loop>${command[0]}</loop>
+                (
+                    let <var>${init_1}</var> ${init_cond} <string>${init_2}</string>; 
+                    <var>${init_1}</var> ${mid_cond} <string>${mid_2}</string>; 
+                    <var>${end}</var>++){<br>  `
 				count(1)
 				let inp = document.getElementById("cond")
                 let btn = document.getElementById("condButton");
@@ -1086,6 +1092,7 @@ function translateCommand(){
         let btn = document.getElementById("condButton");
         btn.style.display= "none"
         inp.style.display= "none"
+        inp.value =  ''
         
         if(destroyBeforeInp !== null){
             for(let i = destroyBeforeInp.length - 1 ; i >= 0; i--){
